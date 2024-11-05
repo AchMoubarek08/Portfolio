@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import AppContainer from './components/AppContainer';
 import AppHeader from './components/AppHeader';
-import Features from './components/About';
+import Abouut from './components/Abouut';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import AppFooter from './components/AppFooter';
 // import NewComponent from './NewComponent';
@@ -12,7 +13,8 @@ const App = () => {
     <AppContainer>
       <Navbar />
       <AppHeader />
-      <Features />
+      <Abouut />
+      <About />
       <AppFooter />
     </AppContainer>
     

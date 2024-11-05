@@ -1,3 +1,57 @@
+/* About.css */
+
+.service-card-container {
+  width: 100%;
+  max-width: 250px;
+}
+
+.service-card {
+  width: 100%;
+  background: linear-gradient(to right, #00ff99, #ff00cc);
+  padding: 1px;
+  border-radius: 20px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.service-card-inner {
+  background-color: #2d2e32;
+  border-radius: 20px;
+  padding: 20px 48px;
+  min-height: 280px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+
+.service-card-icon {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.service-card-title {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.about-intro {
+  margin-top: 16px;
+  color: #a8b2d1;
+  font-size: 17px;
+  max-width: 768px;
+  line-height: 30px;
+}
+
+.about-services {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
 #root {
   width: inherit;
   background-color: black;
@@ -216,9 +270,7 @@ body {
     margin: 0 auto;
     box-sizing: border-box;
   }
-  .navbar
-  {
-  }
+
   .circle-image {
     width: 120px;             /* Smaller size for smaller screens */
     height: 120px;
@@ -291,5 +343,7 @@ body {
   font-size: 1.25rem;
   line-height: 1.8;
 }
+
+
 
 

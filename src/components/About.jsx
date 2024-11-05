@@ -1,41 +1,61 @@
-import React from 'react';
-import { useEffect, useRef } from 'react';
-// import Feature from './Feature';
+import React from "react";
+import { Tilt } from "react-tilt";
+import { motion } from "framer-motion";
+
+import { styles } from "../styles";
+import { services } from "../constants";
+import { SectionWrapper } from "../hoc";
+import { fadeIn, textVariant } from "../motion";
+// import "./About.css";
+
+const ServiceCard = ({ index, title, icon }) => (
+  <Tilt className="service-card-container">
+    <motion.div
+      variants={fadeIn("right", "spring", index * 0.5, 0.75)}
+      className="service-card"
+    >
+      <div
+        options={{
+          max: 45,
+          scale: 1,
+          speed: 450,
+        }}
+        className="service-card-inner"
+      >
+        <img src={icon} alt="web-development" className="service-card-icon" />
+
+        <h3 className="service-card-title">{title}</h3>
+      </div>
+    </motion.div>
+  </Tilt>
+);
 
 const About = () => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && containerRef.current) {
-          containerRef.current.classList.add('animate');
-        }
-      },
-      { threshold: 0.5 }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
-    }
-
-    return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
-    };
-  }, []);
-
   return (
-    <section id="About" className="about-section" ref={containerRef}>
-      <h2 className="about-title about-text">About</h2>
-      <h3 className="about-subtitle about-text">Who I Am</h3>
-      <p className="about-paragraph about-text">
-        I'm a passionate developer with a focus on creating efficient, scalable, and visually appealing web applications. With experience in various technologies, I'm dedicated to continuous learning and innovation.
-      </p>
-    </section>
+    <>
+      <motion.div variants={textVariant()}>
+        <p className={styles.sectionSubText}>Introduction</p>
+        <h2 className={styles.sectionHeadText}>Overview.</h2>
+      </motion.div>
+
+      <motion.p
+        variants={fadeIn("", "", 0.1, 1)}
+        className="about-intro"
+      >
+        I'm a skilled software developer with experience in TypeScript and
+        JavaScript, and expertise in frameworks like React, Node.js, and
+        Three.js. I'm a quick learner and collaborate closely with clients to
+        create efficient, scalable, and user-friendly solutions that solve
+        real-world problems. Let's work together to bring your ideas to life!
+      </motion.p>
+
+      <div className="about-services">
+        {services.map((service, index) => (
+          <ServiceCard key={service.title} index={index} {...service} />
+        ))}
+      </div>
+    </>
   );
 };
 
-
-export default About;
+export default SectionWrapper(About, "about");
