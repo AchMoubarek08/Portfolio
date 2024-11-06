@@ -6,6 +6,7 @@ import Abouut from './components/Abouut';
 import About from './components/About';
 import Navbar from './components/Navbar';
 import AppFooter from './components/AppFooter';
+import ContactUs from './components/ContactUs'; // Import the new component
 // import NewComponent from './NewComponent';
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
       <AppHeader />
       <Abouut />
       <About />
+      <ContactUs />
       <AppFooter />
     </AppContainer>
     

@@ -28,7 +28,7 @@ const abouut = () => {
 
   return (
     <section id="About" className="about-section" ref={containerRef}>
-      <h2 className="about-title about-text">About</h2>
+      <h2 className="about-title about-text" style={{opacity:1}}>About</h2>
       <h3 className="about-subtitle about-text">Who I Am</h3>
       <p className="about-paragraph about-text">
         I'm a passionate developer with a focus on creating efficient, scalable, and visually appealing web applications. With experience in various technologies, I'm dedicated to continuous learning and innovation.
