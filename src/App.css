@@ -1,8 +1,7 @@
 /* About.css */
 
 .service-card-container {
-  width: 100%;
-  max-width: 250px;
+  max-width: 22%;
 }
 
 .service-card {
@@ -16,10 +15,10 @@
 .service-card-inner {
   background-color: #2d2e32;
   border-radius: 20px;
-  padding: 20px 48px;
-  min-height: 280px;
+  padding: 20px 10px;
+  max-height: 164px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
@@ -46,10 +45,10 @@
 }
 
 .about-services {
-  margin-top: 80px;
+  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
-  gap: 40px;
+  gap: 3%;
 }
 
 #root {
@@ -109,23 +108,18 @@ body {
 }
 
 .app-header {
-  /* text-align: center;
-  padding: 40px 0;
-  background-color: #4CAF50;
-  color: white; */
-  background-image: url('./bg.jpg');   /* Background image for header */
-  background-size: cover;             /* Ensures it fills the header */
-  background-position: center;        /* Centers the image */
-  background-repeat: no-repeat; 
-  height: 100vh;                      /* Makes header take full viewport height */
-  width: 100%;                        /* Full width of container */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;            /* Centers content vertically */
-  align-items: center;                /* Centers content horizontally */
-  color: white;                       /* Set text color to ensure readability */
-  box-sizing: border-box;
-  z-index: 2;
+    background-image: url(/src/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    box-sizing: border-box;
 }
 .app-header::before {
   content: '';
@@ -302,12 +296,12 @@ body {
   flex-direction: column;
   max-width: 80%;
   width: 50%;
-  margin: 0 auto;
+  margin: 10% auto;
   height: 100vh;
 }
 
 .about-text {
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s ease;
   max-width: 85%;
 }
