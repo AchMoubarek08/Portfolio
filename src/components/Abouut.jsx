@@ -27,7 +27,7 @@ const abouut = () => {
   }, []);
 
   return (
-    <section id="About" className="about-section" ref={containerRef}>
+    <section id="About" className="section about-section" ref={containerRef}>
       <h2 className="about-title about-text" style={{opacity:1}}>About</h2>
       <h3 className="about-subtitle about-text">Who I Am</h3>
       <p className="about-paragraph about-text">

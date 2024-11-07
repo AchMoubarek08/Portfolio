@@ -102,7 +102,9 @@ body {
 }
 
 .app-container {
-  /* padding: 0% 12% 0% 12%; */
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
   margin: 0 auto;
   box-sizing: border-box;
 }
@@ -180,11 +182,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 0px 10px;
-    /* background-color: #007bff; */
     color: white;
-    /* border: none; */
-    /* border-radius: 5px; */
-    /* text-decoration: none; */
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -381,4 +379,9 @@ body {
   background-color: #0056b3; /* Darker blue */
 }
 
+
+.section {
+  scroll-snap-align: start;
+  height: 100vh;
+}
 

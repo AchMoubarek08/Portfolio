@@ -30,16 +30,16 @@ const ServiceCard = ({ index, title, icon }) => (
   </Tilt>
 );
 
-const About = () => {
+const Overview = () => {
   return (
-    <div className="about-section animate">
+    <div id="Overview" className="section about-section animate">
       <motion.div>
         <p className="about-paragraph about-text">Introduction</p>
         <h1 className="about-subtitle about-text">Overview.</h1>
       </motion.div>
 
       <motion.p className="about-paragraph about-text">
-        I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable, and user-friendly solutions that solve real-world problems. Let's work together to bring your ideas to life!
+        I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable.
       </motion.p>
 
       <div className="about-services">
@@ -51,4 +51,4 @@ const About = () => {
   );
 };
 
-export default SectionWrapper(About, "about");
+export default SectionWrapper(Overview, "overview");
