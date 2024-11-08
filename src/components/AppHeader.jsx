@@ -1,7 +1,7 @@
 import React from 'react';
 import CtaButton from './CtaButton';
-import bgjpg from '../bg.jpg';
-import { i } from 'framer-motion/client';
+// import bgjpg from '../bg.jpg';
+// import { i } from 'framer-motion/client';
 // import './App.css';
 const AppHeader = () => {
   return (
@@ -16,9 +16,6 @@ const AppHeader = () => {
         <img src="../bg.jpg" className="circle-image" />
       </div>
     </div>
-    <a href="#About" className="scroll-button">
-      <i className="fas fa-chevron-down"></i> {/* Font Awesome down arrow icon */}
-    </a>
     </header>
   );
 };

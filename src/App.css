@@ -72,7 +72,7 @@ body {
   position: fixed;
   top: 0px;
   left: 0;
-  z-index: 1000;
+
   background-color: black;
   display: flex;
   justify-content: space-around;
@@ -123,15 +123,7 @@ body {
     color: white;
     box-sizing: border-box;
 }
-.app-header::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 1) 100%);
-}
+
 .hero {
   text-align: center;
   max-width: 60%;
@@ -299,23 +291,36 @@ body {
 }
 
 .about-text {
-  transition: opacity 1s ease;
+  /* transition: opacity 1s ease; */
   max-width: 85%;
 }
 
-/* Apply these styles when the container is in view */
-.animate .about-title {
-  transition-delay: 0.2s; /* First */
+#About .about-title,
+#About .about-subtitle,
+#About .about-paragraph {
+  /* opacity: 0 !important; */
+  transform: translateY(20px) !important;
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
 }
 
-.animate .about-subtitle {
-  transition-delay: 0.5s; /* Second */
+#About .animate .about-title,
+#About .animate .about-subtitle,
+#About .animate .about-paragraph {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
-.animate .about-paragraph {
-  transition-delay: 0.8s; /* Third */
+#About .animate .about-title {
+  transition-delay: 0.2s;
 }
 
+#About .animate .about-subtitle {
+  transition-delay: 0.5s;
+}
+
+#About .animate .about-paragraph {
+  transition-delay: 0.8s;
+}
 
 .about-title {
   font-size: 3rem;
@@ -332,52 +337,117 @@ body {
   font-size: 1.25rem;
   line-height: 1.8;
 }
-
+/* contactUs */
+/* ContactUs.css */
 .contact-section {
-  padding: 40px;
-  background-color: #f2f2f2;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  width: 50%;
+  max-width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.contact-header {
+  padding-bottom: 35px;
+  color: white;
   text-align: center;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
+.contact-header p {
+  font-size: 1rem;
+  color: #555;
 }
 
 .contact-form {
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.contact-form form {
+  color: white;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1.25rem;
 }
 
-.contact-form label {
-  font-weight: bold;
+.form-group {
+  display: flex;
+  flex-direction: column;
 }
 
-.contact-form input,
-.contact-form textarea {
-  padding: 10px;
+label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 0.75rem;
+  font-size: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
-.contact-form button {
-  padding: 10px 20px;
-  background-color: #007bff; /* Blue color */
+.submit-button {
+  padding: 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
   color: white;
+  background-color: #007bff;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.contact-form button:hover {
-  background-color: #0056b3; /* Darker blue */
+.submit-button:hover {
+  background-color: #0056b3;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-header p {
+    font-size: 0.9rem;
+  }
+
+  .submit-button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-section {
+    padding: 1rem;
+  }
+
+  .contact-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .submit-button {
+    font-size: 0.85rem;
+    padding: 0.5rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 0.85rem;
+  }
+}
+
+
 
 
 .section {
