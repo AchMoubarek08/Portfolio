@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import AppFooter from './components/AppFooter';
 import Overview from './components/Overview';
 import ContactUs from './components/ContactUs';
+import Studies from './components/Studies';
 // import ContactUs from './components/ContactUs'; // Import the new component
 // import NewComponent from './NewComponent';
 
@@ -17,6 +18,7 @@ const App = () => {
       <AppHeader />
       <About />
       <Overview />
+      <Studies />
       <ContactUs />
       <AppFooter />
     </AppContainer>
