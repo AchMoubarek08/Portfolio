@@ -13,7 +13,7 @@ import ContactUs from './components/ContactUs';
 import Studies from './components/Studies';
 import CssBaseline from '@mui/material/CssBaseline';
 import * as React from 'react';
-import Card from '@mui/material/Card';
+// import Card from '@mui/material/Card';
 // import CardContent from '@mui/material/CardContent';
 
 

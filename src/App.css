@@ -352,11 +352,11 @@ body {
 .studies-section {
   max-width: 80%;
   margin: 0 auto;
-  /* height: 80%; */
   width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
   padding: 20px;
 }
 
@@ -653,16 +653,51 @@ h1, h2, h3, h5 {
 }
 
 .card {
-  background: #fff;
-  width: 28%;
-  height: fit-content;
-  border-radius: 0.6em;
-  margin: 1em;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
-  transition: all ease 200ms;
+  max-height: 80%;
+    background: #fff;
+    width: 28%;
+    height: fit-content;
+    border-radius: 0.6em;
+    margin: 1em;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
+    transition: all ease 200ms;
 }
+
+@media (max-width: 1200px) {
+  .card {
+    width: 35%;  /* Slightly narrower */
+  }
+}
+
+/* For screens between 992px and 768px */
+@media (max-width: 992px) {
+  .card {
+    width: 45%;  /* Further reduce width */
+    margin: 0.8em;  /* Slightly reduce margin */
+  }
+}
+
+/* For screens between 768px and 576px (small tablets) */
+@media (max-width: 768px) {
+  .card {
+    width: 60%;  /* Narrower for small tablets */
+    margin: 0.6em;  /* Further reduce margin */
+  }
+}
+
+/* For screens smaller than 576px (mobile) */
+@media (max-width: 576px) {
+  .card {
+    width: 90%;  /* Full width for mobile */
+    margin: 0.5em auto;  /* Center the card */
+    box-shadow: 0 8px 16px -5px hsla(240, 30.1%, 28%, 0.2), 
+                0 4px 8px -4px hsla(0, 0%, 0%, 0.2), 
+                0 -4px 8px -4px hsla(0, 0%, 0%, 0.02); /* Lighter shadow */
+  }
+}
+
 
 .card:hover {
   transform: scale(1.03);
