@@ -33,14 +33,16 @@ const ServiceCard = ({ index, title, icon }) => (
 const Overview = () => {
   return (
     <div id="Overview" className="section about-section animate" style={{paddingTop : 60}}>
-      <motion.div>
+      <motion.div style={{width: "100%"}}>
         <p className="about-paragraph about-text">Introduction</p>
         <h1 className="about-subtitle about-text">Overview.</h1>
       </motion.div>
+      <motion.div style={{width: "100%"}}>
+        <motion.p className="about-paragraph about-text">
+          I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable.
+        </motion.p>
+      </motion.div>
 
-      <motion.p className="about-paragraph about-text">
-        I'm a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I'm a quick learner and collaborate closely with clients to create efficient, scalable.
-      </motion.p>
 
       <div className="about-services">
         {services.map((service, index) => (
