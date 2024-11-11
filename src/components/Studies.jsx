@@ -7,15 +7,27 @@ import Card from './Card';
 const Studies = () => {
 
   return (
-    <section id="studies" className="section studies-section">
+    <section id="studies" className="studies-section">
         <Card
           img='https://picsum.photos/id/54/400/300'
           title='What I learned from my visit to The Upside Down'
-          author='Nancy Wheeler' />
+          author='github link'
+          link="https://example.com/article1" />
         <Card
           img='https://picsum.photos/id/54/400/300'
           title='What I learned from my visit to The Upside Down'
-          author='Nancy Wheeler' />
+          author='github link'
+          link="https://example.com/article2" />
+        <Card
+          img='https://picsum.photos/id/54/400/300'
+          title='What I learned from my visit to The Upside Down'
+          author='github link'
+          link="https://google.com" />
+        <Card
+          img='https://picsum.photos/id/54/400/300'
+          title='What I learned from my visit to The Upside Down'
+          author='github link'
+          link="https://pp.com/" />
     </section>
   );
 };
