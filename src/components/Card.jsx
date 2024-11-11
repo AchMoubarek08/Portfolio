@@ -11,7 +11,7 @@ class Card extends React.Component {
             <div className="card-body">
               <h2>{this.props.title}</h2>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-              <h5 onClick={this.handleAuthorClick} style={{ cursor: 'pointer' }}>
+              <h5 onClick={this.handleAuthorClick} style={{ cursor: 'pointer' , width: "fit-content" }}>
             {this.props.author}
           </h5>
             </div>
