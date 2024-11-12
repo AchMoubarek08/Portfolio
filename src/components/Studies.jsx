@@ -7,25 +7,25 @@ import Card from './Card';
 const Studies = () => {
 
   return (
-    <section id="studies" className="studies-section">
+    <section id="studies" className="studies-section animate-section">
         <Card
           img='https://picsum.photos/id/54/400/300'
-          title='What I learned from my visit to The Upside Down'
+          title='Ft_Transendence'
           author='github link'
           link="https://example.com/article1" />
         <Card
           img='https://picsum.photos/id/54/400/300'
-          title='What I learned from my visit to The Upside Down'
+          title='Webserv'
           author='github link'
           link="https://example.com/article2" />
         <Card
           img='https://picsum.photos/id/54/400/300'
-          title='What I learned from my visit to The Upside Down'
+          title='Cube3D'
           author='github link'
           link="https://google.com" />
         <Card
           img='https://picsum.photos/id/54/400/300'
-          title='What I learned from my visit to The Upside Down'
+          title='inception'
           author='github link'
           link="https://pp.com/" />
     </section>

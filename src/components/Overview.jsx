@@ -32,7 +32,7 @@ const ServiceCard = ({ index, title, icon }) => (
 
 const Overview = () => {
   return (
-    <div id="Overview" className="section about-section animate" style={{paddingTop : 60}}>
+    <div id="Overview" className="section about-section animate-section" style={{paddingTop : 60}}>
       <motion.div style={{width: "100%"}}>
         <p className="about-paragraph about-text">Introduction</p>
         <h1 className="about-subtitle about-text">Overview.</h1>

@@ -6,7 +6,7 @@ class Card extends React.Component {
   };
     render() {
       return(
-          <div className="card">
+          <div className="card animate-section">
             <img src={this.props.img} />
             <div className="card-body">
               <h2>{this.props.title}</h2>
