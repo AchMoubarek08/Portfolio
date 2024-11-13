@@ -20,16 +20,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <Router>  {/* Wrap the app in BrowserRouter for routing */}
+    <Router>
       <React.Fragment>
         <AppContainer>
           <Navbar />
           <AppHeader />
-          {/* Define the Routes to match the links */}
           <Routes>
             <Route path="#about" element={<About />} />
           </Routes>
-          <About />
+            <About/>
           <Overview />
           <Studies />
           <ContactUs />

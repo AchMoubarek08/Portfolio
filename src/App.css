@@ -585,7 +585,7 @@ textarea {
 @media (max-width: 768px) {
   .studies-section
   {
-    height: 400vh;
+    height: 320vh;
   }
   .contact-header h2 {
     font-size: 1.5rem;
@@ -713,12 +713,6 @@ h1, h2, h3, h5 {
 }
 
 /* For screens between 992px and 768px */
-@media (max-width: 992px) {
-  .card {
-    width: 45%;  /* Further reduce width */
-    margin: 0.8em;  /* Slightly reduce margin */
-  }
-}
 
 /* For screens between 768px and 576px (small tablets) */
 @media (max-width: 768px) {
