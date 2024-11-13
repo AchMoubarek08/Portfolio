@@ -11,7 +11,7 @@ const AppHeader = () => {
     const timer = setTimeout(() => {
       setIsVisible(true);
       setIsLoading(false);  // Hide loader when done
-    }, 40); // 500ms delay, adjust as needed
+    }, 1500); // 500ms delay, adjust as needed
 
     return () => clearTimeout(timer); // Clean up the timeout on unmount
   }, []);

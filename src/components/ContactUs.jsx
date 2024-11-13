@@ -5,7 +5,7 @@ import BasicTextField from './BasicTextField';
 
 const ContactUs = () => {
   return (
-    <section className="section contact-section">
+    <section className="section contact-section animate-section">
       <div className="contact-header">
         <h2>Contact Us</h2>
       </div>

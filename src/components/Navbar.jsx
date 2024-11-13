@@ -1,13 +1,15 @@
 // Navbar.js
 import React from 'react';
+import { Link } from 'react-router-dom';  // Import the Link component
 
 const Navbar = () => {
   return (
     <nav className="navbar animate-section">
-      <div className="logo">Logo</div>
+      <div className="square-logo">
+      </div>
       <div className="nav-links">
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
+        <Link to="#about">About</Link>
+        <Link to="#work">Work</Link>
       </div>
     </nav>
   );

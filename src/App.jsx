@@ -11,27 +11,32 @@ import AppFooter from './components/AppFooter';
 import Overview from './components/Overview';
 import ContactUs from './components/ContactUs';
 import Studies from './components/Studies';
-import CssBaseline from '@mui/material/CssBaseline';
 import * as React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+
 // import Card from '@mui/material/Card';
 // import CardContent from '@mui/material/CardContent';
 
 
 const App = () => {
   return (
-    <React.Fragment>
-    {/* <CssBaseline /> */}
-    <AppContainer>
-      <Navbar />
-      <AppHeader />
-      <About />
-      <Overview />
-      <Studies />
-      <ContactUs />
-      <AppFooter />
-    </AppContainer>
-  </React.Fragment>
-    
+    <Router>  {/* Wrap the app in BrowserRouter for routing */}
+      <React.Fragment>
+        <AppContainer>
+          <Navbar />
+          <AppHeader />
+          {/* Define the Routes to match the links */}
+          <Routes>
+            <Route path="#about" element={<About />} />
+          </Routes>
+          <About />
+          <Overview />
+          <Studies />
+          <ContactUs />
+          <AppFooter />
+        </AppContainer>
+      </React.Fragment>
+    </Router>
   );
 };
 
