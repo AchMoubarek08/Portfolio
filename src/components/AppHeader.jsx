@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ButtonUsage from './ButtonUsage';
 import Loader from './Loader';  // Import your loader component
+import TypingText from './TypingText';
 
 const AppHeader = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,7 +12,7 @@ const AppHeader = () => {
     const timer = setTimeout(() => {
       setIsVisible(true);
       setIsLoading(false);  // Hide loader when done
-    }, 1500); // 500ms delay, adjust as needed
+    }, 700); // 500ms delay, adjust as needed
 
     return () => clearTimeout(timer); // Clean up the timeout on unmount
   }, []);
@@ -22,7 +23,7 @@ const AppHeader = () => {
       <div className={`hero animate-section ${isLoading ? 'hidden' : ''}`}>
         <div className="box box1">
           <h1 className="hero-name" style={{textAlign:"center"}}>Hi, I'm Achraf</h1>
-          <h3 className="hero-desc">I develop user interfaces, web applications, and more</h3>
+          <TypingText className="hero-desc" text="I  develop user interfaces, web applications and more..." />
           <ButtonUsage />
         </div>
         <div className="box box2">

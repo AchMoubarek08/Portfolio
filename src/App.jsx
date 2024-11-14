@@ -11,6 +11,7 @@ import AppFooter from './components/AppFooter';
 import Overview from './components/Overview';
 import ContactUs from './components/ContactUs';
 import Studies from './components/Studies';
+import Section from './components/Section';
 import * as React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 
@@ -28,7 +29,7 @@ const App = () => {
           <Routes>
             <Route path="#about" element={<About />} />
           </Routes>
-            <About/>
+          <About/>
           <Overview />
           <Studies />
           <ContactUs />
