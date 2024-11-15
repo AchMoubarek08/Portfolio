@@ -8,6 +8,9 @@ const Studies = () => {
 
   return (
     <section id="studies" className="studies-section animate-section">
+        <h1>
+          42 Cursus Projects
+        </h1>
         <Card
           img='https://picsum.photos/id/54/400/300'
           title='Ft_Transendence'

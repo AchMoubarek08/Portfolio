@@ -1,6 +1,5 @@
 // Loader.js
 import React from 'react';
-import ButtonUsage from './ButtonUsage';
 
 const Loader = () => {
   return (

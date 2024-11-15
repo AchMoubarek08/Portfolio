@@ -9,7 +9,7 @@
 
 .three{
   background-color: transparent;
-  padding: 2% 0px;
+  padding: 12% 0px;
 }
 
 /* ALL LOADERS */
@@ -177,17 +177,19 @@
   opacity: 1;
 }
 .app-header {
-    transition: opacity 1s ease;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
+  transition: opacity 1s ease;
+  background-image: url(/mountainsSky.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 7%;
+  align-items: center;
+  box-sizing: border-box;
 }
 .hero.hidden {
   display: none;  /* Hide hero content while loading */
@@ -214,7 +216,7 @@
   display: flex;
   gap: 20px;
   flex: 1;
-  color: white;
+  color: black;
   text-align: center;
   border-radius: 8px;
 }
