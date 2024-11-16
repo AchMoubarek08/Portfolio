@@ -14,6 +14,7 @@ import Studies from './components/Studies';
 import Section from './components/Section';
 import * as React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
+import MultiLayerParallax from './components/MultiLayerParallax';
 
 // import Card from '@mui/material/Card';
 // import CardContent from '@mui/material/CardContent';
@@ -21,22 +22,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 const App = () => {
   return (
-    <Router>
-      <React.Fragment>
-        <AppContainer>
-          <Navbar />
-          <AppHeader />
-          <Routes>
-            <Route path="#about" element={<About />} />
-          </Routes>
-          <About/>
-          <Overview />
-          <Studies />
-          <ContactUs />
-          <AppFooter />
-        </AppContainer>
-      </React.Fragment>
-    </Router>
+    <MultiLayerParallax></MultiLayerParallax>
   );
 };
 

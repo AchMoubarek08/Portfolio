@@ -177,8 +177,9 @@
   opacity: 1;
 }
 .app-header {
+  z-index: 10;
   transition: opacity 1s ease;
-  background-image: url(/lastbg.jpg);
+  background-image: url('/mountainsSky.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
