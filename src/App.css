@@ -130,7 +130,7 @@
   background-color: black;
 }
 .navbar {
-  z-index: 10;
+  z-index: 999;
   padding: 0.38%;
   width: 100%;
   position: fixed;
@@ -177,9 +177,7 @@
   opacity: 1;
 }
 .app-header {
-  z-index: 10;
   transition: opacity 1s ease;
-  background-image: url('/mountainsSky.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -844,4 +842,39 @@ h1, h2, h3, h5 {
 .projects-desc
 {
   height: 65vh;
+}
+.parallax-container
+{
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.parallax-content {
+  font-weight: bold;
+  color: white;
+  font-size: 4.5rem;
+  position: relative;
+  z-index: 10;
+}
+
+.parallax-bg
+{
+  position: absolute;
+  inset: 0px;
+  z-index: 20;
+  background-image: url(/mountainsOnly.png);
+  background-size: cover;
+}
+
+.parallax-fg
+{
+  position: absolute;
+  inset: 0px;
+  z-index: 0;
+  background-image: url(/mountainsSky.jpg);
+  background-size: cover;
 }

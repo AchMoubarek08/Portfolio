@@ -11,33 +11,22 @@ export default function MultiLayerParallax() {
   const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
 
   return (
-    <div
+    <div 
       ref={ref}
-      className="w-full h-screen overflow-hidden relative grid place-items-center"
+      className="parallax-container section"
     >
       <motion.h1
         style={{ y: textY }}
-        className="font-bold text-white text-7xl md:text-9xl relative z-10"
+        className="parallax-content"
       >
-        PARALLAX
+        Parallaxxooox
       </motion.h1>
-
       <motion.div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(/mountainsSky.jpg)`,
-          backgroundPosition: "bottom",
-          backgroundSize: "cover",
-          y: backgroundY,
-        }}
+        className="parallax-fg"
+        style={{y: backgroundY}}
       />
       <div
-        className="absolute inset-0 z-20"
-        style={{
-          backgroundImage: `url(/substractdzb.png)`,
-          backgroundPosition: "bottom",
-          backgroundSize: "cover",
-        }}
+        className="parallax-bg"
       />
     </div>
   );
