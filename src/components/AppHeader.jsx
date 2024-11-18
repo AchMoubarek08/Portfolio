@@ -18,7 +18,7 @@ const AppHeader = () => {
   }, []);
 
   return (
-    <header className={`section app-header ${isVisible ? 'fade-in' : ''}`}>
+    <div className="hero-card">
       {isLoading && <Loader />}  {/* Show loader while loading */}
       <div className={`hero ${isLoading ? 'hidden' : ''}`}>
         <div className="box box1">
@@ -30,7 +30,7 @@ const AppHeader = () => {
           <img src="../bg.jpg" className="circle-image" />
         </div>
       </div>
-    </header>
+    </div>
   );
 };
 

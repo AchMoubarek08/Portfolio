@@ -177,6 +177,7 @@
   opacity: 1;
 }
 .app-header {
+  z-index: 99999999999;
   transition: opacity 1s ease;
   background-size: cover;
   background-position: center;
@@ -202,6 +203,12 @@
   padding: 20px;
   width: 60%;
 }
+.hero-card
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .hero-name
 {
   font-family: "Bungee Shade", sans-serif;
@@ -219,7 +226,14 @@
   text-align: center;
   border-radius: 8px;
 }
-.box2 {
+.box2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+.box1
+{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -403,8 +417,7 @@
   }
   .hero {
     max-width: 60%;
-    margin-top: 2%;
-    gap: 0px;
+    gap: 20px;
     align-items: center;
   }
 }
@@ -516,11 +529,6 @@
 .animate-section.active {
   opacity: 1;
   transform: translateY(0px);
-}
-@media (min-width: 768px) {
-  .parallax-content {
-    font-size: 6rem; /* md:text-9xl */
-  }
 }
 .about-subtitle {
   margin-bottom: 10px;
@@ -858,15 +866,13 @@ h1, h2, h3, h5 {
 }
 
 .parallax-content {
-  font-weight: bold;
-  color: white;
-  font-size: 4.5rem;
   position: relative;
-  z-index: 10;
+    z-index: 10;
 }
 
 .parallax-bg
 {
+  pointer-events: none;
   position: absolute;
   inset: 0px;
   z-index: 20;

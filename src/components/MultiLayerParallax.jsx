@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
+import AppHeader from "./AppHeader";
 
 export default function MultiLayerParallax() {
   const ref = useRef(null);
@@ -8,19 +9,19 @@ export default function MultiLayerParallax() {
     offset: ["start start", "end start"],
   });
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "105%"]);
 
   return (
     <div 
       ref={ref}
       className="parallax-container section"
     >
-      <motion.h1
+      <motion.div
         style={{ y: heroY }}
         className="parallax-content"
       >
-        Parallaxxooox
-      </motion.h1>
+        <AppHeader/>
+      </motion.div>
       <motion.div
         className="parallax-fg"
         style={{y: backgroundY}}
