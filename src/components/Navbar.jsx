@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';  // Import the Link component
 
 const Navbar = () => {
   return (
-    <nav className="navbar animate-section">
+    <nav className="navbar">
       <div className="square-logo">
       </div>
       <div className="nav-links">

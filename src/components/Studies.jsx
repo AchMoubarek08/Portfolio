@@ -7,7 +7,7 @@ import Card from './Card';
 const Studies = () => {
 
   return (
-    <section id="studies" className="studies-section animate-section">
+    <section id="studies" className="studies-section">
         <h1>
           42 Cursus Projects
         </h1>

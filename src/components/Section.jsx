@@ -3,7 +3,7 @@ import About from "./About";
 
 const Section = () => {
   return (
-    <section className="section section-container animate-section">
+    <section className="section section-container">
       <div className="left-div">
         <div className="projects-desc">
             <About/>

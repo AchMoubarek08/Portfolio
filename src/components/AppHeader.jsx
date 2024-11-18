@@ -20,7 +20,7 @@ const AppHeader = () => {
   return (
     <header className={`section app-header ${isVisible ? 'fade-in' : ''}`}>
       {isLoading && <Loader />}  {/* Show loader while loading */}
-      <div className={`hero animate-section ${isLoading ? 'hidden' : ''}`}>
+      <div className={`hero ${isLoading ? 'hidden' : ''}`}>
         <div className="box box1">
           <h1 className="hero-name" style={{textAlign:"center"}}>Hi, I'm Achraf</h1>
           <TypingText className="hero-desc" text="I  develop user interfaces, web applications and more..." />

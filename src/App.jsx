@@ -24,7 +24,7 @@ const App = () => {
   return (
     <Router>
       <React.Fragment>
-          <Navbar />
+        <Navbar />
           <MultiLayerParallax />
           <About/>
           <Overview />

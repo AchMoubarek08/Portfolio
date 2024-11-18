@@ -517,7 +517,11 @@
   opacity: 1;
   transform: translateY(0px);
 }
-
+@media (min-width: 768px) {
+  .parallax-content {
+    font-size: 6rem; /* md:text-9xl */
+  }
+}
 .about-subtitle {
   margin-bottom: 10px;
 }

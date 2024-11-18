@@ -10,7 +10,6 @@ export default function ButtonUsage() {
 
   return (
     <Button
-      className="animate-section"
       style={{ backgroundColor: "#27715B" }}
       variant="contained"
       onClick={handleResumeDownload}

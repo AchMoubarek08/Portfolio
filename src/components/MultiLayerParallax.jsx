@@ -8,7 +8,7 @@ export default function MultiLayerParallax() {
     offset: ["start start", "end start"],
   });
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "200%"]);
+  const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "500%"]);
 
   return (
     <div 
@@ -16,7 +16,7 @@ export default function MultiLayerParallax() {
       className="parallax-container section"
     >
       <motion.h1
-        style={{ y: textY }}
+        style={{ y: heroY }}
         className="parallax-content"
       >
         Parallaxxooox
