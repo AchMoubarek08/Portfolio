@@ -8,7 +8,7 @@ const Studies = () => {
 
   return (
     <section id="studies" className="studies-section">
-        <h2>
+        <h2 className="about-title about-text">
           42 Cursus Projects
         </h2>
         <div className="cardss">
