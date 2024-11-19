@@ -215,14 +215,17 @@
   font-weight: 400;
   font-style: normal;
 }
+.hero-desc
+{
 
+}
 .box {
   align-items: center;
   flex-direction: column;
   display: flex;
   gap: 20px;
   flex: 1;
-  color: black;
+  color: white;
   text-align: center;
   border-radius: 8px;
 }
@@ -422,14 +425,14 @@
   }
 }
 .studies-section {
-  scroll-snap-align: start;
-  max-width: 100%;
-  margin: 0 auto;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10%;
 }
 
 @media (max-width: 480px) {
@@ -717,11 +720,17 @@ h1, h2, h3, h5 {
   color: #555;
   width: 30em;
 }
+.cardss
+{
+  display: flex;
+  flex: 1;
+  align-items: flex-start;
+}
 
 .card {
-  max-height: 70%;
-  background: #fff;
-  width: 40%;
+  background-color: black;
+  /* max-height: 70%; */
+  /* width: 42%; */
   height: fit-content;
   border-radius: 0.6em;
   margin: 1em;
@@ -729,6 +738,7 @@ h1, h2, h3, h5 {
   box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
   transition: all ease 200ms;
 }
+
 
 @media (max-width: 1200px) {
   .card {
@@ -773,7 +783,7 @@ h1, h2, h3, h5 {
 }
 
 .card img {
-  width: 55%;
+  width: 70%;
   object-fit: contain;
 }
 
