@@ -11,7 +11,7 @@ import trendenImage from '/src/trendenden.png'
 const Studies = () => {
 
   return (
-    <section id="studies" className="studies-section">
+    <section id="work" className="studies-section">
         <h2 className="about-title about-text">
           42 Cursus Projects
         </h2>

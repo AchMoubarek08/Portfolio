@@ -8,8 +8,8 @@ const Navbar = () => {
       <div className="square-logo">
       </div>
       <div className="nav-links">
-        <Link to="#about">About</Link>
-        <Link to="#work">Work</Link>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
       </div>
     </nav>
   );
