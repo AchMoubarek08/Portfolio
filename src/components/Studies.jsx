@@ -1,5 +1,9 @@
 import React from 'react';
 import Card from './Card';
+import inceptionImage from '/src/inception.png'
+import webservImage from '/src/nginx.jpg'
+import cubeImage from '/src/cube.jpeg'
+import trendenImage from '/src/trendenden.png'
 // import bgImage from '../bg.jpg';
 
 
@@ -13,25 +17,28 @@ const Studies = () => {
         </h2>
         <div className="cardss">
           <Card
-            img='https://picsum.photos/id/54/400/300'
+            img={trendenImage}
             title='Ft_Transendence'
             author='github link'
             link="https://example.com/article1" />
           <Card
-            img='https://picsum.photos/id/54/400/300'
+            img={webservImage}
             title='Webserv'
             author='github link'
-            link="https://example.com/article2" />
+            link="https://example.com/article2" 
+            />
           <Card
-            img='https://picsum.photos/id/54/400/300'
+            img={cubeImage}
             title='Cube3D'
             author='github link'
-            link="https://google.com" />
+            link="https://google.com"
+             />
           <Card
-            img='https://picsum.photos/id/54/400/300'
+            img={inceptionImage}
             title='inception'
             author='github link'
-            link="https://pp.com/" />
+            link="https://pp.com/" 
+            />
           </div>
     </section>
   );

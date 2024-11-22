@@ -495,6 +495,16 @@
 {
   width: 100%
 }
+.prr2 
+{
+  flex: 0.4;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 10%;
+}
 
 #About .about-title,
 #About .about-subtitle,
@@ -791,8 +801,9 @@ h1, h2, h3, h5 {
 }
 
 .card img {
-  width: 70%;
-  object-fit: contain;
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
 }
 
 .card h2 {
