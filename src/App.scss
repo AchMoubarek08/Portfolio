@@ -575,13 +575,6 @@
   color: #555;
 }
 
-.contact-form {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
 .form-group {
   display: flex;
   flex-direction: column;
@@ -918,4 +911,109 @@ h1, h2, h3, h5 {
   z-index: 0;
   background-image: url(/mountainsSky.jpg);
   background-size: cover;
+}
+
+/* contactos */
+
+.contact-card
+{
+  width: 600px;
+  background-color: black;
+  border-radius: 3px;
+  box-shadow: 0 2px 10px rgba(131, 3, 128, 0);
+  overflow: hidden;
+}
+
+.contact-form
+{
+  padding: 2rem;
+}
+
+.contact-button
+{
+  display: block;
+  width: 100%;
+  background-color: #e14;
+  border: none;
+  border-radius: 3px;
+  padding: 1ch;
+  font-size: 1rem;
+  color: #fff;
+  font-family: inherit;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+@mixin input {
+  display: block;
+  width: 100%;
+  border: 2px solid #eee;
+  padding: 1ch;
+  border-radius: 3px;
+  transition: 150ms ease;
+  outline: none;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+@mixin input-focus {
+  border-color: #e14;
+}
+
+@mixin label {
+  position: absolute;
+  top: 1ch;
+  left: 1ch;
+  padding: 0 .5ch;
+  pointer-events: none;
+  transition: 150ms ease;
+  color: #888;
+}
+
+@mixin label-focus {
+  position: absolute;
+  top: 0;
+  font-size: 0.9em;
+  color: #e14;
+  font-weight: bold;
+  transform: translateY(-50%);
+  background-color: #fff;
+  font-weight: 600;
+}
+
+.text-input {
+  position: relative;
+  margin-bottom: 1rem;
+  label {
+    @include label;
+  }
+  label.label-focus {
+    @include label-focus;
+  }
+  input {
+    @include input;
+  }
+  input.input-focus {
+    @include input-focus;
+  }
+}
+
+.text-area {
+  position: relative;
+  margin-bottom: 1rem;
+  label {
+    @include label;
+  }
+  label.label-focus {
+    @include label-focus;
+  }
+  textarea {
+    @include input;
+    height: 8em;
+  }
+  textarea.input-focus {
+    @include input-focus;
+  }
 }
