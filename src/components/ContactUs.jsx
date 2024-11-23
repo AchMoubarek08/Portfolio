@@ -102,29 +102,36 @@ class ContactUs extends React.Component {
   render() {
     const {name, email, message} = this.state;
   return (
-    <section className="section contact-section">
-        <Card>
-          <h1>Send us a Message!</h1>
-          <Form>
-            <TextInput
-              {...name}
-              onFocus={this.handleFocus.bind(this)}
-              onBlur={this.handleBlur.bind(this)}
-              onChange={this.handleChange.bind(this)} />
-            <TextInput
-              {...email}
-              onFocus={this.handleFocus.bind(this)}
-              onBlur={this.handleBlur.bind(this)}
-              onChange={this.handleChange.bind(this)} />
-            <TextArea
-              {...message}
-              onFocus={this.handleFocus.bind(this)}
-              onBlur={this.handleBlur.bind(this)}
-              onChange={this.handleChange.bind(this)} />
-            <Button>Send</Button>
-          </Form>
-        </Card>
-    </section>
+    <div className="section contact-container">
+          <div className="contact-section">
+          <Card>
+            <h1 style={{textAlign: "center"}}>Contact me</h1>
+            <Form>
+              <TextInput
+                {...name}
+                onFocus={this.handleFocus.bind(this)}
+                onBlur={this.handleBlur.bind(this)}
+                onChange={this.handleChange.bind(this)} />
+              <TextInput
+                {...email}
+                onFocus={this.handleFocus.bind(this)}
+                onBlur={this.handleBlur.bind(this)}
+                onChange={this.handleChange.bind(this)} />
+              <TextArea
+                {...message}
+                onFocus={this.handleFocus.bind(this)}
+                onBlur={this.handleBlur.bind(this)}
+                onChange={this.handleChange.bind(this)} />
+              <Button>Send</Button>
+            </Form>
+          </Card>
+        </div>
+        <div className="contact-section">
+          <Card>
+            <Button>threeJS 3D model</Button>
+          </Card>
+        </div>
+    </div>
   );
 };
 };

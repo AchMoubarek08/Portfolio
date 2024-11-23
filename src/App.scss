@@ -557,9 +557,8 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  width: 50%;
-  max-width: 80%;
-  margin: 10% auto;
+  width: 35%;
+  max-width: 55%;
   height: 100vh;
   box-sizing: border-box;
 }
@@ -917,8 +916,8 @@ h1, h2, h3, h5 {
 
 .contact-card
 {
-  width: 600px;
-  background-color: black;
+  width: 70%;
+  background-color: transparent;
   border-radius: 3px;
   box-shadow: 0 2px 10px rgba(131, 3, 128, 0);
   overflow: hidden;
@@ -933,7 +932,7 @@ h1, h2, h3, h5 {
 {
   display: block;
   width: 100%;
-  background-color: #e14;
+  background-color: #2D9570;
   border: none;
   border-radius: 3px;
   padding: 1ch;
@@ -959,7 +958,7 @@ h1, h2, h3, h5 {
 }
 
 @mixin input-focus {
-  border-color: #e14;
+  border-color: #2D9570;
 }
 
 @mixin label {
@@ -976,10 +975,10 @@ h1, h2, h3, h5 {
   position: absolute;
   top: 0;
   font-size: 0.9em;
-  color: #e14;
+  color: #2D9570;
   font-weight: bold;
   transform: translateY(-50%);
-  background-color: #fff;
+  background-color: black;
   font-weight: 600;
 }
 
@@ -1016,4 +1015,14 @@ h1, h2, h3, h5 {
   textarea.input-focus {
     @include input-focus;
   }
+}
+
+.contact-container
+{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  /* justify-content: space-around; */
+  gap: 0%;
 }
