@@ -1,6 +1,7 @@
 // ContactUs.jsx
 import React from 'react';
 import { render } from 'react-dom';
+import Modelthree from './Modelthree';
 // import './ContactUs.css';
 // import BasicTextField from './BasicTextField';
 
@@ -105,7 +106,7 @@ class ContactUs extends React.Component {
     <div className="section contact-container">
           <div className="contact-section">
           <Card>
-            <h1 style={{textAlign: "center"}}>Contact me</h1>
+            <h2 style={{textAlign: "center"}}>Contact me</h2>
             <Form>
               <TextInput
                 {...name}
@@ -127,9 +128,9 @@ class ContactUs extends React.Component {
           </Card>
         </div>
         <div className="contact-section">
-          <Card>
-            <Button>threeJS 3D model</Button>
-          </Card>
+          
+          <Modelthree />
+          
         </div>
     </div>
   );
