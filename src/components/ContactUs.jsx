@@ -2,6 +2,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import Modelthree from './Modelthree';
+// import EarthCanvas from './Earth.jsx'
+import { EarthCanvas } from "./canvas";
 // import './ContactUs.css';
 // import BasicTextField from './BasicTextField';
 
@@ -129,7 +131,8 @@ class ContactUs extends React.Component {
         </div>
         <div className="contact-section">
           
-          <Modelthree />
+          {/* <Modelthree /> */}
+          <EarthCanvas />
           
         </div>
     </div>
