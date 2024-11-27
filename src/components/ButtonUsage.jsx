@@ -10,7 +10,7 @@ export default function ButtonUsage() {
 
   return (
     <Button
-      style={{ backgroundColor: "#27715B" }}
+      style={{ backgroundColor: "#3f2834" }}
       variant="contained"
       onClick={handleResumeDownload}
     >
