@@ -19,23 +19,27 @@ const Studies = () => {
           <Card
             img={trendenImage}
             title='Ft_Transendence'
+            p='This project aims to create a comprehensive web application for gaming and social interaction, with a primary focus on Pong gameplay.'
             author='github link'
             link="https://example.com/article1" />
           <Card
             img={webservImage}
             title='Webserv'
+            p='HTTP server written in C++ 98, providing non-blocking I/O, CGI support, and multiple port listening for hosting static and dynamic websites.'
             author='github link'
             link="https://example.com/article2" 
             />
           <Card
             img={cubeImage}
             title='Cube3D'
+            p='This project is inspired by the world-famous Wolfenstein 3D game, which was the first FPS ever. exploring the concept of ray-casting. thekkkk'
             author='github link'
             link="https://google.com"
              />
           <Card
             img={inceptionImage}
             title='inception'
+            p='HTTP server written in C++ 98, providing non-blocking I/O, CGI support, and multiple port listening for hosting static and dynamic websites.'
             author='github link'
             link="https://pp.com/" 
             />

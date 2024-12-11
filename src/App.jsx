@@ -30,7 +30,6 @@ const App = () => {
           <Overview />
           <Studies />
           <ContactUs />
-          <AppFooter />
       </React.Fragment>
     </Router>
   );
