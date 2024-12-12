@@ -159,7 +159,10 @@
   font-size: 1rem;
   transition: color 0.3s ease;
 }
-
+.nav-links a.active {
+  color: #3E84BA; /* Active color */
+  font-weight: bold; /* Optional: Make it stand out */
+}
 .nav-links a:hover {
   color: #3E84BA; /* Change color on hover */
 }
@@ -547,6 +550,7 @@
 }
 
 .about-section p {
+  color: #7F8DA1;
   margin: 0;
   line-height: 1.8;
 }
@@ -725,8 +729,7 @@ h1, h2, h3, h5 {
 .cardss
 {
   display: flex;
-  flex: 1;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .card {
@@ -1027,3 +1030,24 @@ h1, h2, h3, h5 {
   /* justify-content: space-around; */
   gap: 0%;
 }
+.popup {
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 15px 20px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  z-index: 1000;
+}
+
+.popup.success {
+  background-color: green;
+}
+
+.popup.error {
+  background-color: #f44336;
+}
+
+

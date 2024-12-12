@@ -58,118 +58,105 @@ class ContactUs extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: {
-        name: 'name',
-        label: 'Name',
-        value: '',
-        focus: false,
-      },
-      email: {
-        name: 'email',
-        label: 'Email',
-        value: '',
-        focus: false,
-      },
-      message: {
-        name: 'message',
-        label: 'Message',
-        value: '',
-        focus: false,
-      },
+      name: { name: 'name', label: 'Name', value: '', focus: false },
+      email: { name: 'email', label: 'Email', value: '', focus: false },
+      message: { name: 'message', label: 'Message', value: '', focus: false },
       submitting: false,
-      submitStatus: null
-    }
+      submitStatus: null,
+    };
   }
 
   handleFocus(e) {
     const name = e.target.name;
-    const state = {...this.state[name]};
+    const state = { ...this.state[name] };
     state.focus = true;
     this.setState({ [name]: state });
   }
-  
+
   handleBlur(e) {
     const name = e.target.name;
-    const state = {...this.state[name]};
+    const state = { ...this.state[name] };
     state.focus = false;
     this.setState({ [name]: state });
   }
-  
+
   handleChange(e) {
     const name = e.target.name;
-    const state = {...this.state[name]};
+    const state = { ...this.state[name] };
     state.value = e.target.value;
     this.setState({ [name]: state });
   }
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // Prepare submission data
+
     const submissionData = {
       name: this.state.name.value,
       email: this.state.email.value,
-      message: this.state.message.value
+      message: this.state.message.value,
     };
 
-    // Set submitting state
-    this.setState({ 
-      submitting: true, 
-      submitStatus: null 
+    this.setState({
+      submitting: true,
+      submitStatus: null,
     });
 
     try {
-      // Send form data to backend
       const response = await axios.post('http://localhost:5000/api/contact', submissionData);
-      
-      // Handle successful submission
+
       this.setState({
         submitting: false,
         submitStatus: 'success',
-        name: {...this.state.name, value: ''},
-        email: {...this.state.email, value: ''},
-        message: {...this.state.message, value: ''}
+        name: { ...this.state.name, value: '' },
+        email: { ...this.state.email, value: '' },
+        message: { ...this.state.message, value: '' },
       });
 
-      // Optional: Show success message to user
-      alert('Message sent successfully!');
+      // Automatically hide popup after 3 seconds
+      setTimeout(() => {
+        this.setState({ submitStatus: null });
+      }, 3000);
     } catch (error) {
-      // Handle submission error
       this.setState({
         submitting: false,
-        submitStatus: 'error'
+        submitStatus: 'error',
       });
 
-      // Optional: Show error message to user
-      alert('Failed to send message. Please try again.');
+      // Optional: Hide error after 3 seconds
+      setTimeout(() => {
+        this.setState({ submitStatus: null });
+      }, 3000);
     }
-  }
-  
+  };
+
   render() {
-    const {name, email, message, submitting} = this.state;
-    
+    const { name, email, message, submitting, submitStatus } = this.state;
+
     return (
-      <div className="section contact-container">
+      <section id="contactus" className="section contact-container">
         <div className="contact-section">
           <Card>
-            <h2 style={{textAlign: "center"}}>Contact me</h2>
+            <h2 style={{ textAlign: "center" }}>Contact me</h2>
             <Form onSubmit={this.handleSubmit}>
               <TextInput
                 {...name}
                 onFocus={this.handleFocus.bind(this)}
                 onBlur={this.handleBlur.bind(this)}
-                onChange={this.handleChange.bind(this)} />
+                onChange={this.handleChange.bind(this)}
+              />
               <TextInput
                 {...email}
                 type="email"
                 onFocus={this.handleFocus.bind(this)}
                 onBlur={this.handleBlur.bind(this)}
-                onChange={this.handleChange.bind(this)} />
+                onChange={this.handleChange.bind(this)}
+              />
               <TextArea
                 {...message}
                 onFocus={this.handleFocus.bind(this)}
                 onBlur={this.handleBlur.bind(this)}
-                onChange={this.handleChange.bind(this)} />
+                onChange={this.handleChange.bind(this)}
+              />
               <Button disabled={submitting}>
                 {submitting ? 'Sending...' : 'Send'}
               </Button>
@@ -179,7 +166,19 @@ class ContactUs extends React.Component {
         <div className="contact-section">
           <EarthCanvas />
         </div>
-      </div>
+
+        {/* Custom popup for success or error */}
+        {submitStatus === 'success' && (
+          <div className="popup success">
+            <p>Message sent successfully!</p>
+          </div>
+        )}
+        {submitStatus === 'error' && (
+          <div className="popup error">
+            <p>Failed to send message. Please try again.</p>
+          </div>
+        )}
+      </section>
     );
   }
 }

@@ -13,6 +13,7 @@ import ContactUs from './components/ContactUs';
 import Studies from './components/Studies';
 import Section from './components/Section';
 import * as React from 'react';
+import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 // import MultiLayerParallax from './components/MultiLayerParallax';
 
@@ -21,6 +22,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 const App = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scroll to the top on page load
+  }, []);
   return (
     <Router>
       <React.Fragment>
