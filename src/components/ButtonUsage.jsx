@@ -9,12 +9,10 @@ export default function ButtonUsage() {
   };
 
   return (
-    <Button
-      style={{ backgroundColor: "#3f2834" }}
-      variant="contained"
-      onClick={handleResumeDownload}
-    >
+    <button onClick={handleResumeDownload}
+    className="btn btn-border-2"
+    type="submit">
       Resume.pdf
-    </Button>
+  </button>
   );
 }

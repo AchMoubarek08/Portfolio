@@ -47,11 +47,12 @@ const TextArea = props => (
 
 const Button = props => (
   <button
-    className="contact-button"
-    type="submit"
-    disabled={props.disabled}>
-    {props.children}
-  </button>
+  className={`btn btn-border-2 ${props.disabled ? 'btn-disabled' : ''}`}
+  type="submit"
+  disabled={props.disabled}
+>
+  {props.children}
+</button>
 );
 
 class ContactUs extends React.Component {

@@ -24,7 +24,9 @@ const AppHeader = () => {
         <div className="box box1">
           <h1 className="hero-name" style={{textAlign:"center"}}>Hi, I'm Achraf</h1>
           <TypingText className="hero-desc" text="I  develop user interfaces, web apps and more.." />
-          <ButtonUsage />
+          <ButtonUsage>
+
+          </ButtonUsage>
         </div>
         <div className="box box2">
           <img src="../bg.jpg" className="circle-image" />

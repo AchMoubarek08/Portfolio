@@ -33,7 +33,7 @@
   height: 100%;
   border-radius: 100%;
   border: 10px solid transparent;
-  border-top-color: #3f2834;
+  border-top-color: #3E84BA;
 }
 
 #loader-1:before{
@@ -86,7 +86,7 @@
 .service-card-inner {
   background-color: white;
   border-radius: 20px;
-  padding: 20px 10px;
+  padding: 60px 10px;
   max-height: 164px;
   display: flex;
   justify-content: center;
@@ -136,7 +136,7 @@
   position: fixed;
   top: 0px;
   left: 0;
-  background-color: #3f2834;
+  background-color: #3E84BA;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -279,7 +279,7 @@
 
 .button {
   background-color: black;
-  color: #3f2834;
+  color: #3E84BA;
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -317,7 +317,7 @@
 .app-footer {
   text-align: center;
   padding: 20px 0;
-  background-color: #3f2834;
+  background-color: #3E84BA;
   color: white;
 }
 
@@ -550,7 +550,7 @@
 }
 
 .about-section p {
-  color: #7F8DA1;
+  color: white;
   margin: 0;
   line-height: 1.8;
 }
@@ -602,16 +602,13 @@ textarea {
   font-size: 1rem;
   font-weight: bold;
   color: white;
-  background-color: #3f2834;
+  background-color: #3E84BA;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-.submit-button:hover {
-  background-color: #0056b3;
-}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -733,11 +730,11 @@ h1, h2, h3, h5 {
 }
 
 .card {
+  max-height: 90%;
   padding: 0.5%;
   background: linear-gradient(to right, #3E84BA, #3E84BA);
   background-color: black;
-  /* max-height: 70%; */
-  /* width: 42%; */
+  width: 42%;
   height: fit-content;
   border-radius: 0.6em;
   margin: 0.5em;
@@ -803,16 +800,16 @@ h1, h2, h3, h5 {
 }
 
 .card h2 {
-  color: #3f2834;
-  margin-top: -0.2em;
+  color: #3E84BA;
   line-height: 1.4;
-  font-size: 1.3em;
+  font-size: 1em;
   font-weight: 500;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   transition: all ease-in 100ms;
 }
 
 .card p {
+  font-size: 0.95rem;
   color: #777;
 }
 
@@ -829,7 +826,7 @@ h1, h2, h3, h5 {
 .card-body {
   border-radius: 0.6rem;
   background: white;
-  padding: 1.2em;
+  padding: 1em;
 }
 
 .section-container {
@@ -934,21 +931,79 @@ h1, h2, h3, h5 {
 
 .contact-button
 {
-  display: block;
-  width: 100%;
-  background-color: #3f2834;
-  border: none;
-  border-radius: 3px;
-  padding: 1ch;
-  font-size: 1rem;
-  color: #fff;
-  font-family: inherit;
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 12px 27px;
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #999999;
+  background: #ffffff;
+  border: 3px solid #999999;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  -webkit-transition: ease-out 0.5s;
+  -moz-transition: ease-out 0.5s;
+}
+.btn {
+    width: 90%;
+    position: relative;
+    display: inline-block;
+    margin: 15px;
+    padding: 12px 27px;
+    text-align: center;
+    font-size: 19px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: white;
+    background: transparent;
+    border: 3px solid #999999;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    -webkit-transition: ease-out 0.5s;
+}
+.btn.btn-border-2::after,
+.btn.btn-border-2::before {
+    position: absolute;
+    content: "";
+    width: 0;
+    height: 0;
+    transition: .5s;
 }
 
-*, *:before, *:after {
-  box-sizing: border-box;
+.btn.btn-border-2::after {
+    top: -3px;
+    left: -3px;
+    border-top: 3px solid transparent;
+    border-left: 3px solid transparent;
 }
 
+.btn.btn-border-2::before {
+    bottom: -3px;
+    right: -3px;
+    border-bottom: 3px solid transparent;
+    border-right: 3px solid transparent;
+}
+
+.btn.btn-border-2:hover {
+    color: #3E84BA;
+}
+
+.btn.btn-border-2:hover::after,
+.btn.btn-border-2:hover::before {
+    width: calc(50% + 3px);
+    height: calc(50% + 3px);
+    border-color: #3E84BA;
+}
+.btn-disabled {
+  background-color: #ccc; /* Change background */
+  color: #666;           /* Dim the text */
+  cursor: not-allowed;   /* Indicate disabled state */
+  border-color: #ccc;    /* Adjust border color if needed */
+  transition: all 0.3s ease; /* Smooth transition */
+}
 @mixin input {
   display: block;
   width: 100%;
@@ -962,7 +1017,7 @@ h1, h2, h3, h5 {
 }
 
 @mixin input-focus {
-  border-color: #3f2834;
+  border-color: #3E84BA;
 }
 
 @mixin label {
@@ -979,7 +1034,7 @@ h1, h2, h3, h5 {
   position: absolute;
   top: 0;
   font-size: 0.9em;
-  color: #3f2834;
+  color: #3E84BA;
   font-weight: bold;
   transform: translateY(-50%);
   background-color: black;
