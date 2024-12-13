@@ -11,6 +11,7 @@ export default function ButtonUsage() {
   return (
     <button onClick={handleResumeDownload}
     className="btn btn-border-2"
+    style={{border:" 4px solid white"}}
     type="submit">
       Resume.pdf
   </button>
