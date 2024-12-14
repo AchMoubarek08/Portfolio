@@ -1,4 +1,5 @@
 // Navbar.js
+import { WbIncandescentTwoTone } from '@mui/icons-material';
 import React, { useState, useEffect } from 'react';
 
 const Navbar = () => {
@@ -23,7 +24,7 @@ const Navbar = () => {
 
     // Scroll listener for navbar transparency
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 600); // Adjust the scroll threshold as needed
+      setIsScrolled(window.scrollY > 370 && window.scrollY < 3100); // Adjust the scroll threshold as needed
     };
 
     window.addEventListener('scroll', handleScroll);

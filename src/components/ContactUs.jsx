@@ -134,52 +134,55 @@ class ContactUs extends React.Component {
     const { name, email, message, submitting, submitStatus } = this.state;
 
     return (
-      <section id="contactus" className="section contact-container">
-        <div className="contact-section">
-          <Card>
-            <h2 style={{ textAlign: "center" }}>Contact me</h2>
-            <Form onSubmit={this.handleSubmit}>
-              <TextInput
-                {...name}
-                onFocus={this.handleFocus.bind(this)}
-                onBlur={this.handleBlur.bind(this)}
-                onChange={this.handleChange.bind(this)}
-              />
-              <TextInput
-                {...email}
-                type="email"
-                onFocus={this.handleFocus.bind(this)}
-                onBlur={this.handleBlur.bind(this)}
-                onChange={this.handleChange.bind(this)}
-              />
-              <TextArea
-                {...message}
-                onFocus={this.handleFocus.bind(this)}
-                onBlur={this.handleBlur.bind(this)}
-                onChange={this.handleChange.bind(this)}
-              />
-              <Button disabled={submitting}>
-                {submitting ? 'Sending...' : 'Send'}
-              </Button>
-            </Form>
-          </Card>
-        </div>
-        <div className="contact-section">
-          <EarthCanvas />
-        </div>
+<section id="contactus" className="section contact-container">
+  <div className="contact-background">
+    <div className="stars"></div>
+  </div>
+  <div className="contact-section">
+    <Card>
+      <h2 style={{ textAlign: "center" }}>Contact me</h2>
+      <Form onSubmit={this.handleSubmit}>
+        <TextInput
+          {...name}
+          onFocus={this.handleFocus.bind(this)}
+          onBlur={this.handleBlur.bind(this)}
+          onChange={this.handleChange.bind(this)}
+        />
+        <TextInput
+          {...email}
+          type="email"
+          onFocus={this.handleFocus.bind(this)}
+          onBlur={this.handleBlur.bind(this)}
+          onChange={this.handleChange.bind(this)}
+        />
+        <TextArea
+          {...message}
+          onFocus={this.handleFocus.bind(this)}
+          onBlur={this.handleBlur.bind(this)}
+          onChange={this.handleChange.bind(this)}
+        />
+        <Button disabled={submitting}>
+          {submitting ? 'Sending...' : 'Send'}
+        </Button>
+      </Form>
+    </Card>
+  </div>
+  <div className="contact-section">
+    <EarthCanvas />
+  </div>
 
-        {/* Custom popup for success or error */}
-        {submitStatus === 'success' && (
-          <div className="popup success">
-            <p>Message sent successfully!</p>
-          </div>
-        )}
-        {submitStatus === 'error' && (
-          <div className="popup error">
-            <p>Failed to send message. Please try again.</p>
-          </div>
-        )}
-      </section>
+  {/* Custom popup for success or error */}
+  {submitStatus === 'success' && (
+    <div className="popup success">
+      <p>Message sent successfully!</p>
+    </div>
+  )}
+  {submitStatus === 'error' && (
+    <div className="popup error">
+      <p>Failed to send message. Please try again.</p>
+    </div>
+  )}
+</section>
     );
   }
 }
