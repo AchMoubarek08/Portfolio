@@ -22,7 +22,7 @@ const TypingText = ({ text, typingSpeed = 100 }) => {
     return () => clearInterval(typingInterval); // Clean up on unmount
   }, [text, typingSpeed]);
   console.log('distext %s', displayedText);
-  return <h3>{displayedText}</h3>;
+  return <h3 style={{color: "black"}}>{displayedText}</h3>;
 };
 
 export default TypingText;

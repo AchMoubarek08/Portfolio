@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import ButtonUsage from './ButtonUsage';
 import Loader from './Loader';  // Import your loader component
 import TypingText from './TypingText';
+import { color } from 'framer-motion';
 
 const AppHeader = () => {
   // const [isVisible, setIsVisible] = useState(false);
@@ -23,7 +24,7 @@ const AppHeader = () => {
       <div className={`hero ${isLoading ? 'hidden' : ''}`}>
         <div className="box box1">
           <h1 className="hero-name" style={{textAlign:"center"}}>Hi, I'm Achraf</h1>
-          <TypingText className="hero-desc" text="I  develop user interfaces, web apps and more.." />
+          <TypingText style={{color: "black"}} className="hero-desc" text="I  develop user interfaces, web apps and more.." />
           <ButtonUsage>
 
           </ButtonUsage>

@@ -33,7 +33,7 @@
   height: 100%;
   border-radius: 100%;
   border: 10px solid transparent;
-  border-top-color: #3E84BA;
+  border-top-color: black;
 }
 
 #loader-1:before{
@@ -144,14 +144,13 @@
   display: flex;
   justify-content: space-between; /* Space between logo and links */
   align-items: center;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
   transition: background-color 0.3s ease; /* Smooth background color change */
   transition: padding 0.8s ease, background-color 0.6s ease, box-shadow 0.6s ease, transform 0.6s ease;
 }
 .navbar.shrink {
   padding: 0.3rem 18rem; /* Reduced padding */
   background-color: rgba(62, 132, 186, 0.8); /* Slightly transparent background */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 4px 60px rgba(0, 0, 0, 0.8); /* Stylish shadow */
+  box-shadow: 0 10px 30px (0, 0, 0, 0.6), 0 4px 60px rgba(0, 0, 0, 0.8); /* Stylish shadow */
   backdrop-filter: blur(8px);
 }
 .navbar.scrolled {
@@ -169,11 +168,11 @@
 }
 
 .nav-links a {
-  color: white;
+  color: black;
   text-decoration: none;
-  font-size: 1.1rem; /* Slightly larger font size */
-  font-weight: 500;
-  position: relative; /* For the underline effect */
+  font-size: 1.5rem;
+  font-weight: 800;
+  position: relative;
   transition: color 0.3s ease, transform 0.3s ease;
 }
 .nav-links a::after {
@@ -259,13 +258,15 @@
 }
 .hero-name
 {
+  color : black;
   font-family: "Bungee Shade", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
+
 .hero-desc
 {
-
+  color: black;
 }
 .box {
   align-items: center;
@@ -596,8 +597,7 @@
   font-size: 2.5rem; /* Bigger font size for prominence */
   font-weight: bold;
   color: white; /* Match brand color */
-  margin-bottom: 1rem;
-  text-transform: uppercase; /* Add emphasis */
+  margin-bottom: 1rem; /* Add emphasis */
   position: relative;
 }
 
@@ -969,7 +969,7 @@ h1, h2, h3, h5 {
   position: absolute;
   inset: 0px;
   z-index: 0;
-  background-image: url(/mountainsSky.jpg);
+  background-image: url(/freepik.png);
   background-size: cover;
 }
 

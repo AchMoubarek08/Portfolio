@@ -135,9 +135,6 @@ class ContactUs extends React.Component {
 
     return (
 <section id="contactus" className="section contact-container">
-  <div className="contact-background">
-    <div className="stars"></div>
-  </div>
   <div className="contact-section">
     <Card>
       <h2 style={{ textAlign: "center" }}>Contact me</h2>
