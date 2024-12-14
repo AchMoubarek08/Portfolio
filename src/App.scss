@@ -166,7 +166,10 @@
   display: flex;
   gap: 2rem; /* Space between the links */
 }
-
+.nav-links.last a
+{
+  color: white;
+}
 .nav-links a {
   color: black;
   text-decoration: none;

@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState(''); // Track the active section
+  const[lastSection, setLastSection] = useState(false);
 
   useEffect(() => {
     // Intersection Observer for active link detection
@@ -24,7 +25,8 @@ const Navbar = () => {
 
     // Scroll listener for navbar transparency
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 370 && window.scrollY < 3100); // Adjust the scroll threshold as needed
+      setIsScrolled(window.scrollY > 370 && window.scrollY < 3100);
+      setLastSection(window.scrollY > 3100);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -45,15 +47,16 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`navbar ${isScrolled ? 'shrink' : ''}`}>
+    <nav className={`navbar ${isScrolled ? 'shrink' : ''}`}
+    >
     <div
       className="square-logo"
       onClick={scrollToTop}
-      style={{ cursor: 'pointer' }}
+      style={{ cursor: 'pointer'}}
     >
       {/* Your logo content */}
     </div>
-    <div className="nav-links">
+    <div className={`nav-links ${lastSection ? 'last' : ''}`}>
       <a
         href="#about"
         onClick={() => handleClick('about')}
@@ -66,7 +69,7 @@ const Navbar = () => {
         onClick={() => handleClick('work')}
         className={activeLink === 'work' ? 'active' : ''}
       >
-        Work
+        Studies
       </a>
     </div>
   </nav>
