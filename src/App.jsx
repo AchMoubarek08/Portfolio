@@ -3,15 +3,14 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import AppContainer from './components/AppContainer';
 import MultiLayerParallax from './components/MultiLayerParallax';
 import About from './components/About';
 import Navbar from './components/Navbar';
-import AppFooter from './components/AppFooter';
 import Overview from './components/Overview';
 import ContactUs from './components/ContactUs';
 import Studies from './components/Studies';
-import Section from './components/Section';
+import { StarsCanvas } from './components/canvas';
+// import { About, MultiLayerParallax, Navbar, Overview, ContactUs, Navbar, Studies, StarsCanvas } from "./components";
 import * as React from 'react';
 import { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
@@ -33,7 +32,10 @@ const App = () => {
           <About/>
           <Overview />
           <Studies />
+          <div className="contactstars">
           <ContactUs />
+          <StarsCanvas/>
+          </div>
       </React.Fragment>
     </Router>
   );

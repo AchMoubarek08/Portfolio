@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import { EarthCanvas } from "./canvas";
+import { StarsCanvas } from "./canvas";
+
 
 const Card = props => (
   <div className="contact-card">
@@ -135,38 +137,39 @@ class ContactUs extends React.Component {
 
     return (
 <section id="contactus" className="section contact-container">
-  <div className="contact-section">
-    <Card>
-      <h2 style={{ textAlign: "center" }}>Contact me</h2>
-      <Form onSubmit={this.handleSubmit}>
-        <TextInput
-          {...name}
-          onFocus={this.handleFocus.bind(this)}
-          onBlur={this.handleBlur.bind(this)}
-          onChange={this.handleChange.bind(this)}
-        />
-        <TextInput
-          {...email}
-          type="email"
-          onFocus={this.handleFocus.bind(this)}
-          onBlur={this.handleBlur.bind(this)}
-          onChange={this.handleChange.bind(this)}
-        />
-        <TextArea
-          {...message}
-          onFocus={this.handleFocus.bind(this)}
-          onBlur={this.handleBlur.bind(this)}
-          onChange={this.handleChange.bind(this)}
-        />
-        <Button disabled={submitting}>
-          {submitting ? 'Sending...' : 'Send'}
-        </Button>
-      </Form>
-    </Card>
-  </div>
-  <div className="contact-section">
-    <EarthCanvas />
-  </div>
+    <div className="contact-section">
+      <Card>
+        <h2 style={{ textAlign: "center" }}>Contact me</h2>
+        <Form onSubmit={this.handleSubmit}>
+          <TextInput
+            {...name}
+            onFocus={this.handleFocus.bind(this)}
+            onBlur={this.handleBlur.bind(this)}
+            onChange={this.handleChange.bind(this)}
+          />
+          <TextInput
+            {...email}
+            type="email"
+            onFocus={this.handleFocus.bind(this)}
+            onBlur={this.handleBlur.bind(this)}
+            onChange={this.handleChange.bind(this)}
+          />
+          <TextArea
+            {...message}
+            onFocus={this.handleFocus.bind(this)}
+            onBlur={this.handleBlur.bind(this)}
+            onChange={this.handleChange.bind(this)}
+          />
+          <Button disabled={submitting}>
+            {submitting ? 'Sending...' : 'Send'}
+          </Button>
+        </Form>
+      </Card>
+    </div>
+    <div className="contact-section">
+      <EarthCanvas />
+    </div>
+
 
   {/* Custom popup for success or error */}
   {submitStatus === 'success' && (
