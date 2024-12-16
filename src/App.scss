@@ -196,6 +196,7 @@
 .nav-links a.active {
   color: #0aba24; /* Highlight active link */
   font-weight: bold;
+  transform: scale(1.2);
 }
 .nav-links a:hover {
   color: #0aba24; /* Slightly lighter hover color */
@@ -247,28 +248,33 @@
 
 .hero {
   text-align: center;
-  max-width: 60%;
+  max-width: 100%;
   display: flex;
-  gap: 0px;
-  padding: 20px;
-  width: 60%;
+  gap: 0%;
+  width: 100%;
 }
 .hero-card
 {
+  margin-bottom: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .hero-name
 {
-  color : black;
-  font-family: "Bungee Shade", sans-serif;
-  font-weight: 400;
+  text-align: left;
+  color: black;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 600;
   font-style: normal;
+  font-size: 5rem;
+  line-height: 1.2;
 }
 
 .hero-desc
 {
+  text-align: left;
+  font-size: 1.5rem;
   color: black;
 }
 .box {
@@ -312,9 +318,9 @@
   background-size: cover;             
   background-position: center;        
   background-repeat: no-repeat;
-  background-color: beige;
-  width: 240px;
-  height: 240px;
+  background-color: transparent;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   object-fit: cover;
   margin-bottom: 10px;
@@ -464,8 +470,7 @@
     box-sizing: border-box;
   }
   .hero {
-    max-width: 60%;
-    gap: 20px;
+    max-width: 55%;
     align-items: center;
   }
 }

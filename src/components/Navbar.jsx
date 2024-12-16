@@ -65,9 +65,9 @@ const Navbar = () => {
         About
       </a>
       <a
-        href="#work"
-        onClick={() => handleClick('work')}
-        className={activeLink === 'work' ? 'active' : ''}
+        href="#studies"
+        onClick={() => handleClick('studies')}
+        className={activeLink === 'studies' ? 'active' : ''}
       >
         Studies
       </a>

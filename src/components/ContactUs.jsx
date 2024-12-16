@@ -136,7 +136,7 @@ class ContactUs extends React.Component {
     const { name, email, message, submitting, submitStatus } = this.state;
 
     return (
-<section id="contactus" className="section contact-container">
+<section className="section contact-container">
     <div className="contact-section">
       <Card>
         <h2 style={{ textAlign: "center" }}>Contact me</h2>
