@@ -46,8 +46,12 @@ const Card = props => (
   );
   
   const Button = props => (
-    <button
-      className="button">{props.children}</button>
+    <motion.button
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.95 }}
+    whileDrag={{ scale: 0.9, rotate: 10 }}
+    drag
+      className="button">{props.children}</motion.button>
   );
   
   /** Root Component */

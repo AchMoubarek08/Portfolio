@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import { EarthCanvas } from "./canvas";
 import { StarsCanvas } from "./canvas";
+import { motion } from "framer-motion";
+import AnimateSection from './AnimateSection';
 
 
 const Card = props => (
@@ -48,13 +50,19 @@ const TextArea = props => (
 );
 
 const Button = props => (
-  <button
+<motion.button
   className={`btn btn-border-2 ${props.disabled ? 'btn-disabled' : ''}`}
   type="submit"
   disabled={props.disabled}
+  whileHover={{ 
+    scale: props.disabled ? 1 : 1.05, 
+    boxShadow: props.disabled ? "none" : "0px 4px 10px rgba(0, 0, 0, 0.2)" 
+  }}
+  whileTap={{ scale: props.disabled ? 1 : 0.95 }}
+  transition={{ type: "spring", stiffness: 300, damping: 20 }}
 >
   {props.children}
-</button>
+</motion.button>
 );
 
 class ContactUs extends React.Component {
@@ -139,6 +147,18 @@ class ContactUs extends React.Component {
 <section className="section contact-container">
     <div className="contact-section">
       <Card>
+      <AnimateSection
+                  initialOpacity={0}
+                  initialX={0}         
+                  finalOpacity={1}        
+                  finalX={250}
+                  initialY={0}
+                  finalY={0}              
+                  duration={0.8}         
+                  threshold={0.8}     
+                  triggerOnce={false}
+                  customStyle={{width: "50%"}}
+      >
         <h2 style={{ textAlign: "center" }}>Contact me</h2>
         <Form onSubmit={this.handleSubmit}>
           <TextInput
@@ -164,10 +184,26 @@ class ContactUs extends React.Component {
             {submitting ? 'Sending...' : 'Send'}
           </Button>
         </Form>
+        </AnimateSection>
       </Card>
     </div>
     <div className="contact-section">
-      <EarthCanvas />
+    <div className="contact-card">
+      <AnimateSection
+      initialOpacity={0}
+      initialX={250}         
+      finalOpacity={1}        
+      finalX={0}
+      initialY={0}
+      finalY={0}              
+      duration={0.8}         
+      threshold={0.8}     
+      triggerOnce={false}
+      customStyle={{width: "50%", height: "100%"}}
+      >
+      <EarthCanvas/>
+      </AnimateSection>
+      </div>
     </div>
 
 

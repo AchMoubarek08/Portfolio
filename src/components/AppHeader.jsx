@@ -21,7 +21,7 @@ const AppHeader = () => {
       {isLoading && <Loader />}  {/* Show loader while loading */}
       <AnimateSection
         initialOpacity={0}
-        initialY={500}         
+        initialY={400}         
         finalOpacity={1}        
         finalY={0}              
         duration={0.5}         

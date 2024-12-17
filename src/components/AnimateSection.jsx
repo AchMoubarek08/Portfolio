@@ -5,35 +5,39 @@ import { useInView } from "react-intersection-observer";
 const AnimateSection = ({
   children,
   initialOpacity = 0,
+  initialX = 0,
   initialY = 50,
   finalOpacity = 1,
+  finalX = 0,
   finalY = 0,
   duration = 0.8,
-  threshold = 0.2,
+  threshold = 1,
   triggerOnce = true,
   customStyle = {},
 }) => {
+  // Intersection Observer to track visibility
   const { ref, inView } = useInView({
-    triggerOnce,  // Animates only once when in view
-    threshold,    // Adjust visibility threshold (e.g., 20%)
+    triggerOnce,
+    threshold,
   });
 
+  // Variants for motion animations
   const variants = {
-    hidden: { opacity: initialOpacity, y: initialY },
-    visible: { opacity: finalOpacity, y: finalY },
+    hidden: { opacity: initialOpacity, x: initialX, y: initialY },
+    visible: { opacity: finalOpacity, x: finalX, y: finalY },
   };
-  const motionStyle = {
-    transition: `all ${duration}s ease-out`,
-    ...customStyle, // Apply custom styles passed from props
-  };
+
   return (
     <motion.div
-      ref={ref} // Attach ref to detect section visibility
+      ref={ref} // Ref for visibility tracking
       initial="hidden"
-      animate={inView ? "visible" : "hidden"} // Animate when in view
+      animate={inView ? "visible" : "hidden"}
       variants={variants}
-      transition={{ duration, ease: "easeOut" }} // Customize animation
-      style={motionStyle} // Apply the merged styles here
+      transition={{ duration, ease: "easeOut" }} // Smooth animation transition
+      style={{
+        ...customStyle,
+        willChange: "opacity, transform", // Optimize animation rendering
+      }}
     >
       {children}
     </motion.div>
