@@ -27,12 +27,12 @@ const About = () => {
       <div className="prr2">
         <AnimateSection
           initialOpacity={0}
-          initialX={-150}         
+          initialY={150}         
           finalOpacity={1}        
-          finalX={0}
-          initialY={0}
-          finalY={0}              
-          duration={0.5}         
+          finalY={0}
+          initialX={0}
+          finalX={0}              
+          duration={1}         
           threshold={0.8}     
           triggerOnce={true}
         >

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { motion } from "framer-motion";
 
 class Card extends React.Component {
   handleAuthorClick = () => {
@@ -6,7 +7,12 @@ class Card extends React.Component {
   };
     render() {
       return(
-          <div className="card">
+          <motion.div className="card"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          whileDrag={{ scale: 0.9, rotate: 10 }}
+          drag
+          >
             <img src={this.props.img} />
             <div className="card-body">
               <h2>{this.props.title}</h2>
@@ -15,7 +21,7 @@ class Card extends React.Component {
             {this.props.author}
           </h5>
             </div>
-          </div>
+          </motion.div>
       )
     }
   }

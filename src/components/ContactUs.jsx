@@ -157,7 +157,7 @@ class ContactUs extends React.Component {
                   duration={0.8}         
                   threshold={0.8}     
                   triggerOnce={false}
-                  customStyle={{width: "50%"}}
+                  customStyle={{width: "50%", height: "55%"}}
       >
         <h2 style={{ textAlign: "center" }}>Contact me</h2>
         <Form onSubmit={this.handleSubmit}>
@@ -199,7 +199,7 @@ class ContactUs extends React.Component {
       duration={0.8}         
       threshold={0.8}     
       triggerOnce={false}
-      customStyle={{width: "50%", height: "100%"}}
+      customStyle={{width: "50%", height: "55%"}}
       >
       <EarthCanvas/>
       </AnimateSection>
