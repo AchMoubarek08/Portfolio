@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ButtonUsage from './ButtonUsage';
 import Loader from './Loader';
-import TypingText from './TypingText';
 import { color } from 'framer-motion';
 import AnimateSection from './AnimateSection';
 

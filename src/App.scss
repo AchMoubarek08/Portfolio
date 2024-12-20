@@ -1334,10 +1334,9 @@ textarea:focus {
 }
 
 .project-card {
-  flex: 0 0 320px;
-  min-width: 320px;
-  max-width: 320px;
-  height: 380px;
+  min-width: 250px;
+  max-width: 368px;
+  height: 499px;
   border-radius: 12px;
   overflow: hidden;
   position: relative;
@@ -1359,7 +1358,7 @@ textarea:focus {
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
-    height: 200px;
+    height: 310px;
     justify-content: space-between;
     
     h3 {
@@ -1374,7 +1373,7 @@ textarea:focus {
       font-size: 0.9rem;
       line-height: 1.6;
       display: -webkit-box;
-      -webkit-line-clamp: 4;
+      -webkit-line-clamp: 6;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;

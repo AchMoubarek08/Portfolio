@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { motion } from "framer-motion";
 import Card from './Card';
 import AnimateSection from './AnimateSection';
@@ -8,13 +8,13 @@ const Studies = () => {
     {
       img: '/src/inception.png',
       title: 'Inception',
-      description: 'A Docker-based project implementing a complete web infrastructure with multiple services.',
+      description: 'A Docker-based project implementing a complete web infrastructure with multiple services. A Docker-based project implementing a complete web infrastructure with multiple services.',
       githubLink: "https://github.com/yourusername/inception"
     },
     {
       img: '/src/nginx.jpg',
       title: 'Webserv',
-      description: 'HTTP server in C++98 with non-blocking I/O, CGI support, and multiple port listening.',
+      description: 'HTTP server in C++98 with non-blocking I/O, CGI support, and multiple port listening.HTTP server in C++98 with non-blocking I/O, CGI support, and multiple port listening.',
       githubLink: "https://github.com/yourusername/webserv"
     },
     {
@@ -26,7 +26,7 @@ const Studies = () => {
     {
       img: '/src/trendenden.png',
       title: 'Ft_Transcendence',
-      description: 'Real-time multiplayer Pong game with chat, authentication, and matchmaking.',
+      description: 'Real-time multiplayer Pong game with chat',
       githubLink: "https://github.com/yourusername/ft_transcendence"
     }
   ];
