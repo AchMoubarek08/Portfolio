@@ -7,7 +7,6 @@ import Navbar from './components/Navbar';
 import Overview from './components/Overview';
 import ContactUs from './components/ContactUs';
 import Studies from './components/Studies';
-import AnimateSection from './components/AnimateSection';
 import { StarsCanvas } from './components/canvas';
 
 const App = () => {
@@ -19,6 +18,7 @@ const App = () => {
         <MultiLayerParallax />
           <About />
           <Overview />
+          {/* Section divider between Overview and Studies */}
           <Studies />
         <div className="contactstars">
             <ContactUs />

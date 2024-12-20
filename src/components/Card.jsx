@@ -1,30 +1,39 @@
-import * as React from 'react';
+import React from 'react';
 import { motion } from "framer-motion";
+import { FaGithub } from 'react-icons/fa';
 
-class Card extends React.Component {
-  handleAuthorClick = () => {
-    window.open(this.props.link, '_blank'); // Opens link in a new tab
-  };
-    render() {
-      return(
-          <motion.div className="card"
-          whileHover={{ scale: 1.1 }}
+const Card = ({ img, title, description, githubLink }) => {
+  return (
+    <motion.div 
+      className="project-card glass-effect"
+      whileHover={{ 
+        y: -5,
+        transition: { duration: 0.2 }
+      }}
+    >
+      <div className="card-image-container">
+        <img src={img} alt={title} />
+      </div>
+      <div className="card-content">
+        <div>
+          <h3>{title}</h3>
+          <p>{description}</p>
+        </div>
+        <motion.a 
+          href={githubLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="github-link"
+          whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          whileDrag={{ scale: 0.9, rotate: 10 }}
-          drag
-          >
-            <img src={this.props.img} />
-            <div className="card-body">
-              <h2>{this.props.title}</h2>
-              <p>{this.props.p}</p>
-              <h5 onClick={this.handleAuthorClick} style={{ cursor: 'pointer' , width: "fit-content" }}>
-            {this.props.author}
-          </h5>
-            </div>
-          </motion.div>
-      )
-    }
-  }
-  
-  export default Card;
+        >
+          <FaGithub />
+          <span>View on GitHub</span>
+        </motion.a>
+      </div>
+    </motion.div>
+  );
+};
+
+export default Card;
   

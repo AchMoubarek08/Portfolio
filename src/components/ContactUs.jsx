@@ -7,7 +7,7 @@ import AnimateSection from './AnimateSection';
 
 
 const Card = props => (
-  <div className="contact-card">
+  <div className="contact-card glass-effect">
     {props.children}
   </div>
 );
@@ -144,81 +144,91 @@ class ContactUs extends React.Component {
     const { name, email, message, submitting, submitStatus } = this.state;
 
     return (
-<section className="section contact-container">
-    <div className="contact-section">
-      <Card>
-      <AnimateSection
-                  initialOpacity={0}
-                  initialX={0}         
-                  finalOpacity={1}        
-                  finalX={250}
-                  initialY={0}
-                  finalY={0}              
-                  duration={0.8}         
-                  threshold={0.8}     
-                  triggerOnce={false}
-                  customStyle={{width: "50%", height: "55%"}}
-      >
-        <h2 style={{ textAlign: "center" }}>Contact me</h2>
-        <Form onSubmit={this.handleSubmit}>
-          <TextInput
-            {...name}
-            onFocus={this.handleFocus.bind(this)}
-            onBlur={this.handleBlur.bind(this)}
-            onChange={this.handleChange.bind(this)}
-          />
-          <TextInput
-            {...email}
-            type="email"
-            onFocus={this.handleFocus.bind(this)}
-            onBlur={this.handleBlur.bind(this)}
-            onChange={this.handleChange.bind(this)}
-          />
-          <TextArea
-            {...message}
-            onFocus={this.handleFocus.bind(this)}
-            onBlur={this.handleBlur.bind(this)}
-            onChange={this.handleChange.bind(this)}
-          />
-          <Button disabled={submitting}>
-            {submitting ? 'Sending...' : 'Send'}
-          </Button>
-        </Form>
-        </AnimateSection>
-      </Card>
-    </div>
-    <div className="contact-section">
-    <div className="contact-card">
-      <AnimateSection
-      initialOpacity={0}
-      initialX={250}         
-      finalOpacity={1}        
-      finalX={0}
-      initialY={0}
-      finalY={0}              
-      duration={0.8}         
-      threshold={0.8}     
-      triggerOnce={false}
-      customStyle={{width: "50%", height: "55%"}}
-      >
-      <EarthCanvas/>
-      </AnimateSection>
-      </div>
-    </div>
+      <section className="section contact-container">
+        <div className="contact-section">
+          <Card>
+            <AnimateSection
+              initialOpacity={0}
+              initialX={-100}         
+              finalOpacity={1}        
+              finalX={0}
+              initialY={0}
+              finalY={0}              
+              duration={0.8}         
+              threshold={0.8}     
+              triggerOnce={false}
+              customStyle={{width: "100%", height: "100%", padding: "2rem"}}
+            >
+              <h2 className="contact-title">Get in Touch</h2>
+              <p className="contact-subtitle">Feel free to reach out. I'd love to hear from you!</p>
+              <Form onSubmit={this.handleSubmit}>
+                <TextInput
+                  {...name}
+                  onFocus={this.handleFocus.bind(this)}
+                  onBlur={this.handleBlur.bind(this)}
+                  onChange={this.handleChange.bind(this)}
+                />
+                <TextInput
+                  {...email}
+                  type="email"
+                  onFocus={this.handleFocus.bind(this)}
+                  onBlur={this.handleBlur.bind(this)}
+                  onChange={this.handleChange.bind(this)}
+                />
+                <TextArea
+                  {...message}
+                  onFocus={this.handleFocus.bind(this)}
+                  onBlur={this.handleBlur.bind(this)}
+                  onChange={this.handleChange.bind(this)}
+                />
+                <Button disabled={submitting}>
+                  {submitting ? (
+                    <>
+                      <span className="spinner"></span>
+                      <span>Sending...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="button-text">Send Message</span>
+                      <span className="button-icon">→</span>
+                    </>
+                  )}
+                </Button>
+              </Form>
+            </AnimateSection>
+          </Card>
+        </div>
 
+        <div className="contact-section">
+          <div className="contact-card glass-effect">
+            <AnimateSection
+              initialOpacity={0}
+              initialX={100}         
+              finalOpacity={1}        
+              finalX={0}
+              initialY={0}
+              finalY={0}              
+              duration={0.8}         
+              threshold={0.8}     
+              triggerOnce={false}
+              customStyle={{width: "100%", height: "100%"}}
+            >
+              <EarthCanvas/>
+            </AnimateSection>
+          </div>
+        </div>
 
-  {/* Custom popup for success or error */}
-  {submitStatus === 'success' && (
-    <div className="popup success">
-      <p>Message sent successfully!</p>
-    </div>
-  )}
-  {submitStatus === 'error' && (
-    <div className="popup error">
-      <p>Failed to send message. Please try again.</p>
-    </div>
-  )}
-</section>
+        {submitStatus && (
+          <motion.div 
+            className={`popup ${submitStatus}`}
+            initial={{ y: -100, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ y: -100, opacity: 0 }}
+          >
+            <p>{submitStatus === 'success' ? 'Message sent successfully!' : 'Failed to send message. Please try again.'}</p>
+          </motion.div>
+        )}
+      </section>
     );
   }
 }
