@@ -35,8 +35,11 @@ const About = () => {
           initialX={-50}
           finalOpacity={1}
           finalX={0}
+          initialY={0}
+          finalY={0}
           duration={0.8}
           threshold={0.2}
+          triggerOnce={true}
         >
           <div className="about-header">
             <h2 className="about-title">About Me</h2>
@@ -60,9 +63,12 @@ const About = () => {
           initialY={30}
           finalOpacity={1}
           finalY={0}
+          initialX={0}
+          finalX={0}
           duration={0.8}
           delay={0.3}
           threshold={0.2}
+          triggerOnce={true}
         >
           <div className="social-links">
             {socialLinks.map((link, index) => (

@@ -1,9 +1,12 @@
 import { Suspense, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, Float, Decal, useTexture} from '@react-three/drei';
+import { OrbitControls, Float, useTexture, Decal } from '@react-three/drei';
 import { useGesture } from '@use-gesture/react';
 import { useSpring, animated } from '@react-spring/three';
 import PropTypes from 'prop-types';
+import { extend } from '@react-three/fiber';
+
+extend({ Decal });
 
 const TechBox = ({ position, imgUrl }) => {
   const meshRef = useRef();
@@ -19,26 +22,26 @@ const TechBox = ({ position, imgUrl }) => {
   }));
   
   const bind = useGesture({
-    onDrag: ({ offset: [x], velocity: [vx], down }) => {
+    onDrag: ({ offset: [x, y], velocity: [vx, vy], down }) => {
       if (meshRef.current) {
-        const rotY = Math.max(
-          Math.min(x / 50, Math.PI / 4),
-          -Math.PI / 4
-        );
+        const rotX = (y / 100) % (2 * Math.PI);
+        const rotY = (x / 100) % (2 * Math.PI);
         
         api.start({
-          rotation: [0, rotY, 0],
+          rotation: [rotX, rotY, 0],
           immediate: down
         });
         
         if (!down) {
-          const momentumRotY = Math.max(
-            Math.min(rotY + vx * 0.2, Math.PI / 4),
-            -Math.PI / 4
-          );
+          const momentumX = rotX + vy * 0.2;
+          const momentumY = rotY + vx * 0.2;
           
           api.start({
-            rotation: [0, momentumRotY, 0]
+            rotation: [momentumX, momentumY, 0],
+            config: {
+              tension: 120,
+              friction: 14
+            }
           });
         }
       }
@@ -60,28 +63,36 @@ const TechBox = ({ position, imgUrl }) => {
         e.stopPropagation();
       }}
     >
-      <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-        <mesh castShadow receiveShadow scale={1.5}>
+      <Float speed={1.75} rotationIntensity={0.5} floatIntensity={1}>
+        <mesh shadows scale={1.8}>
           <icosahedronGeometry args={[1, 1]} />
-          <meshStandardMaterial
+          <meshPhysicalMaterial
             color='#ffffff'
-            polygonOffset
-            polygonOffsetFactor={-5}
-            flatShading
-            metalness={0.1}
-            roughness={0.2}
-            emissive="#303030"
-            emissiveIntensity={0.2}
-            clearcoat={0.8}
-            clearcoatRoughness={0.2}
-            normalScale={0.4}
+            envMapIntensity={2}
+            metalness={2}
+            roughness={1}
+            clearcoat={1}
+            clearcoatRoughness={0.1}
+            transmission={0.2}
+            thickness={2}
+            reflectivity={6}
+            iridescence={0.3}
+            iridescenceIOR={1.5}
+            sheen={1}
+            sheenRoughness={0.5}
+            sheenColor="#ffffff"
+            attenuationColor="#ffffff"
+            specularIntensity={1}
+            specularColor="#ffffff"
           />
-          <Decal
+          <Decal 
             position={[0, 0, 1]}
-            rotation={[2 * Math.PI, 0, 6.25]}
-            scale={1.2}
+            rotation={[0, 0, 0]}
+            scale={1.5}
             map={decal}
-            flatShading
+            transparent
+            polygonOffset
+            polygonOffsetFactor={-10}
           />
         </mesh>
       </Float>
@@ -114,15 +125,17 @@ const TechStack3D = () => {
         style={{ height: '250px' }}
         shadows
       >
-        <ambientLight intensity={0.7} />
+        <color attach="background" args={['#151515']} />
+        <ambientLight intensity={0.3} />
         <spotLight
           position={[10, 10, 10]}
           angle={0.15}
           penumbra={1}
-          intensity={0.5}
+          intensity={2}
           castShadow
         />
-        <pointLight position={[-10, -10, -10]} intensity={0.5} />
+        <pointLight position={[-10, -10, -10]} intensity={1} color="#ff4444" />
+        <pointLight position={[10, -10, 10]} intensity={1} color="#4477ff" />
         
         <Suspense fallback={null}>
           {technologies.map((tech, index) => (

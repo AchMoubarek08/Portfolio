@@ -156,7 +156,7 @@ class ContactUs extends React.Component {
               finalY={0}              
               duration={0.8}         
               threshold={0.8}     
-              triggerOnce={false}
+              triggerOnce={true}
               customStyle={{width: "100%", height: "100%", padding: "2rem"}}
             >
               <h2 className="contact-title">Get in Touch</h2>
@@ -210,7 +210,7 @@ class ContactUs extends React.Component {
               finalY={0}              
               duration={0.8}         
               threshold={0.8}     
-              triggerOnce={false}
+              triggerOnce={true}
               customStyle={{width: "100%", height: "100%"}}
             >
               <EarthCanvas/>

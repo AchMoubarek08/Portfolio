@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Card from './Card';
 import AnimateSection from './AnimateSection';
+import { all } from "axios";
 
 const Studies = () => {
   const projects = [
@@ -43,7 +44,7 @@ const Studies = () => {
       >
         <div className="studies-header glass-effect">
           <h2 className="studies-title">Featured Projects</h2>
-          <p className="studies-subtitle">Showcasing my journey through 42's curriculum</p>
+          <p className="studies-subtitle">Showcasing my journey through 42&apos;s curriculum</p>
         </div>
       </AnimateSection>
 
@@ -51,22 +52,23 @@ const Studies = () => {
         className="projects-grid"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+        viewport={{ once: true, amount: 0.8 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         {projects.map((project, index) => (
-          <AnimateSection
-            key={index}
-            initialOpacity={0}
-            initialY={50}
-            finalOpacity={1}
-            finalY={0}
-            duration={0.5}
-            delay={index * 0.1}
-            threshold={0.2}
+          <motion.div
+            key={Number(index)}
+            initial={{ opacity: 0, x: -100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: all }}
+            transition={{
+              duration: 0.6,
+              delay: 0.2 + (index * 0.6),
+              ease: "easeOut"
+            }}
           >
             <Card {...project} />
-          </AnimateSection>
+          </motion.div>
         ))}
       </motion.div>
     </section>

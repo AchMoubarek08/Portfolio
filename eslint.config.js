@@ -24,6 +24,16 @@ export default [
       'react-refresh': reactRefresh,
     },
     rules: {
+      "react/no-unknown-property": ["error", { 
+        "ignore": [
+          "scale", "position", "rotation", "args", "map", 
+          "polygonOffset", "polygonOffsetFactor", "metalness", 
+          "roughness", "envMapIntensity", "clearcoat", 
+          "clearcoatRoughness", "transmission", "thickness", 
+          "reflectivity", "iridescence", "iridescenceIOR", 
+          "sheen", "sheenRoughness", "sheenColor"
+        ] 
+      }],
       ...js.configs.recommended.rules,
       ...react.configs.recommended.rules,
       ...react.configs['jsx-runtime'].rules,
