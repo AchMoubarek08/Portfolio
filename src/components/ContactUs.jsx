@@ -1,9 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import { EarthCanvas } from "./canvas";
-import { StarsCanvas } from "./canvas";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import AnimateSection from './AnimateSection';
+import PropTypes from 'prop-types';
 
 
 const Card = props => (
@@ -12,9 +12,18 @@ const Card = props => (
   </div>
 );
 
+Card.propTypes = {
+  children: PropTypes.node.isRequired
+};
+
 const Form = props => (
   <form className="contact-form" onSubmit={props.onSubmit}>{props.children}</form>
 );
+
+Form.propTypes = {
+  children: PropTypes.node.isRequired,
+  onSubmit: PropTypes.func.isRequired
+};
 
 const TextInput = props => (
   <div className="text-input">
@@ -64,6 +73,11 @@ const Button = props => (
   {props.children}
 </motion.button>
 );
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+  disabled: PropTypes.bool
+};
 
 class ContactUs extends React.Component {
   constructor() {
@@ -218,16 +232,70 @@ class ContactUs extends React.Component {
           </div>
         </div>
 
-        {submitStatus && (
-          <motion.div 
-            className={`popup ${submitStatus}`}
-            initial={{ y: -100, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -100, opacity: 0 }}
-          >
-            <p>{submitStatus === 'success' ? 'Message sent successfully!' : 'Failed to send message. Please try again.'}</p>
-          </motion.div>
-        )}
+        <AnimatePresence>
+          {submitStatus && (
+            <motion.div 
+              className={submitStatus}
+              initial={{ y: -100, opacity: 0, scale: 0.8, rotate: -10 }}
+              animate={{ y: 0, opacity: 1, scale: 1, rotate: 0 }}
+              exit={{ y: -100, opacity: 0, scale: 0.8, rotate: 10 }}
+              transition={{
+                duration: 0.5,
+                ease: [0.19, 1.0, 0.22, 1.0], // Custom easing for a bouncy feel
+                scale: {
+                  type: "spring",
+                  damping: 8,
+                  stiffness: 100
+                }
+              }}
+              style={{
+                position: 'fixed',
+                left: '42%',
+                top: '20px',
+                zIndex: 1000,
+                transform: 'translateX(-50%)',
+                padding: '16px 32px',
+                borderRadius: '20px',
+                backgroundColor: submitStatus === 'success' 
+                  ? 'rgba(29, 211, 176, 0.95)'  // Cosmic green
+                  : 'rgba(255, 88, 124, 0.95)',  // Cosmic red
+                color: 'white',
+                boxShadow: submitStatus === 'success'
+                  ? '0 0 20px rgba(29, 211, 176, 0.5), 0 0 40px rgba(29, 211, 176, 0.3)'
+                  : '0 0 20px rgba(255, 88, 124, 0.5), 0 0 40px rgba(255, 88, 124, 0.3)',
+                fontSize: '16px',
+                fontWeight: '600',
+                minWidth: '300px',
+                textAlign: 'center',
+                backdropFilter: 'blur(8px)',
+                border: '1px solid rgba(255, 255, 255, 0.2)'
+              }}
+            >
+              <motion.p 
+                style={{ 
+                  margin: 0,
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  gap: '10px'
+                }}
+                initial={{ scale: 0.8 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.1 }}
+              >
+                {submitStatus === 'success' ? (
+                  <>
+                    <span>Message sent successfully!</span>
+                  </>
+                ) : (
+                  <>
+                    <span>Failed to send message.</span>
+                  </>
+                )}
+              </motion.p>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
     );
   }

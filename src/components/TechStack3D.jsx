@@ -125,8 +125,7 @@ const TechStack3D = () => {
         style={{ height: '250px' }}
         shadows
       >
-        <color attach="background" args={['#151515']} />
-        <ambientLight intensity={0.3} />
+        <ambientLight intensity={0.02} />
         <spotLight
           position={[10, 10, 10]}
           angle={0.15}
@@ -134,8 +133,7 @@ const TechStack3D = () => {
           intensity={2}
           castShadow
         />
-        <pointLight position={[-10, -10, -10]} intensity={1} color="#ff4444" />
-        <pointLight position={[10, -10, 10]} intensity={1} color="#4477ff" />
+
         
         <Suspense fallback={null}>
           {technologies.map((tech, index) => (

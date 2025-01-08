@@ -1,6 +1,5 @@
 // Navbar.js
-import { WbIncandescentTwoTone } from '@mui/icons-material';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);

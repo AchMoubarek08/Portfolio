@@ -59,6 +59,33 @@ const Overview = () => {
               I&apos;m a skilled software developer with experience in TypeScript and JavaScript, and expertise in frameworks like React, Node.js, and Three.js. I&apos;m a quick learner and collaborate closely with clients to create efficient, scalable solutions.
             </p>
           </div>
+
+          <div className="skills-container">
+            <h3 className="skills-title">Core Skills</h3>
+            <div className="skills-grid">
+              {[
+                { name: "React", level: 90 },
+                { name: "JavaScript", level: 85 },
+                { name: "TypeScript", level: 80 },
+                { name: "Node.js", level: 75 },
+                { name: "Three.js", level: 70 },
+                { name: "CSS/SCSS", level: 85 }
+              ].map((skill, index) => (
+                <div key={skill.name} className="skill-item">
+                  <div className="skill-info">
+                    <span>{skill.name}</span>
+                    <span>{skill.level}%</span>
+                  </div>
+                  <motion.div 
+                    className="progress-bar"
+                    initial={{ width: 0 }}
+                    whileInView={{ width: `${skill.level}%` }}
+                    transition={{ duration: 1, delay: index * 0.2 }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
         </AnimateSection>
 
         <div className="about-services">
